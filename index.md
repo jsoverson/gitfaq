@@ -23,8 +23,8 @@ git push
 ## How do I commit a file?
 
 ```
-git add file.js   # stage the file
-git commit    # commit the file
+git add file.js # stage the file
+git commit      # commit the file
 ```
 
 ------------------------------------------------
@@ -38,11 +38,10 @@ git push origin branch-name
 
 ------------------------------------------------
 
-## How do I get updates from the origin?
+## How do I get updates from the server?
  
 ```
-git pull --rebase
-what about git pull?
+git pull
 ```
 
 ------------------------------------------------
@@ -50,16 +49,10 @@ what about git pull?
 ## How do I create a branch?
 
 ```
-git branch just creates a branch off the current sha
-git checkout <branch> moves to branch
-```
+git branch <branch>   # just creates a branch off the current sha
+git checkout <branch> # actually moves to branch
 
-------------------------------------------------
-
-## How do I check out a branch from the server?
-
-```
-git checkout -b <branch>
+git checkout -b <branch>    # branches and moves to the branch in one command
 ```
 
 ------------------------------------------------
@@ -84,17 +77,21 @@ $ git reset file.txt
 git commit --amend
 ```
 
+Warning: This changes history! Do not do this on a shared branch that has been pushed.
+
 ------------------------------------------------
 
-## Oops I forgot a file in my last commit!
+## What if I forgot a file in my last commit!
 
 ```
-# after a commit
-git add file.js
-git commit --amend
+git commit       # the original commit
+git add file.js  # the file that needed to be included
+git commit --amend  # amend the commit in step 1 with the added file
 ```
 
 This will add the file to the previous commit and replace it with a new commit.
+
+Warning: This changes history! Do not do this on a shared branch that has been pushed.
 
 ------------------------------------------------
 
@@ -106,7 +103,7 @@ This will add the file to the previous commit and replace it with a new commit.
 git reset --hard HEAD~1
 ```
 
-### &bull; Do you want to keep your changes and just undo the actual commit?
+### &bull; Do you want to keep your changes and just undo the actual act of committing?
 
 ```
 git reset HEAD~1
@@ -117,9 +114,12 @@ git reset HEAD~1
 ## How do I revert all uncommitted changes?
 
 ```
-git checkout .
-git checkout file.txt
-git checkout somedir/
+git checkout .        # reset all tracked files
+git checkout file.txt # reset file.txt
+git checkout somedir/ # reset all files in somedir/
+```
+
+```
 git reset --hard HEAD
 ```
 
