@@ -21,6 +21,4 @@ tagline:
 
 ## Is rebasing bad?
 
-## What is “detached head”
-
 ## What is commit “squashing”?
