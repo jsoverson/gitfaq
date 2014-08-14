@@ -1,7 +1,7 @@
 ---
 layout: page
 title: GIT FAQ
-tagline: 
+tagline: Help without manpages.
 ---
 {% include JB/setup %}
 
@@ -77,7 +77,7 @@ $ git reset file.txt
 git commit --amend
 ```
 
-Warning: This changes history! Do not do this on a shared branch that has been pushed.
+{{ site.warning.history }}
 
 ------------------------------------------------
 
@@ -91,19 +91,19 @@ git commit --amend  # amend the commit in step 1 with the added file
 
 This will add the file to the previous commit and replace it with a new commit.
 
-Warning: This changes history! Do not do this on a shared branch that has been pushed.
+{{ site.warning.history }}
 
 ------------------------------------------------
 
 ## How do I undo a commit?
 
-### &bull; Do you want to undo the commit and never see the changes ever again?
+Do you want to undo the commit and never see the changes ever again?
 
 ```
 git reset --hard HEAD~1
 ```
 
-### &bull; Do you want to keep your changes and just undo the actual act of committing?
+Do you want to keep your changes and just undo the actual act of committing?
 
 ```
 git reset HEAD~1
@@ -140,4 +140,6 @@ git reset
 git checkout .
 git clean -fdx
 ```
+------------------------------------------------
+
 

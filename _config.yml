@@ -26,6 +26,9 @@ maruku:
   png_url:    /images/latex
   fenced_code_blocks: true
 
+warning:
+  history: <span class=warn><em>Warning</em> This changes history! Do not do this on a shared branch that has been pushed.</span>
+
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
 # Most places will/should use BASE_PATH to make the urls
