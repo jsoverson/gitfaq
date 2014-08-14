@@ -60,13 +60,13 @@ git checkout -b <branch>    # branches and moves to the branch in one command
 ## How do I undo git add?
 
 ```
-$ git reset
+git reset
 ```
 
 *or* 
 
 ```
-$ git reset file.txt
+git reset file.txt
 ```
 
 ------------------------------------------------
