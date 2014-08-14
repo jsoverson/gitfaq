@@ -5,7 +5,7 @@ tagline: Help without manpages.
 ---
 {% include JB/setup %}
 
-Want to answer or ask a question? Check out the [unanswered page](./unanswered.html).
+Want to answer or ask a question? Fork the [repository](https://github.com/jsoverson/gitfaq) and check out the [unanswered page](./unanswered.html).
 
 ## How do I start a new git repository?
 
@@ -19,6 +19,20 @@ git push
 
 ------------------------------------------------
 
+## How do I ignore a file pattern?
+
+```
+git ignore '*.swp'
+```
+
+If you haven't ignored anything yet, this creates a `.gitignore` file which you probably want to add and track.
+
+```
+git add .gitignore
+git commit -m 'added .gitignore'
+```
+
+------------------------------------------------
 
 ## How do I commit a file?
 
@@ -173,7 +187,7 @@ master    A-B-C-D-E-F-G
 
 ------------------------------------------------
 
-## What is 'detached head'?
+## What is a "detached head"?
 
 ```
 master    A-B-C-D-E-F-G
@@ -192,7 +206,7 @@ git checkout master
  
 ------------------------------------------------
 
-## What is origin?
+## What is "origin"?
 
 Origin is the default name for the remote server. "Remotes" can be named anything, you can see the names of all
  your remotes with the command `remote`
