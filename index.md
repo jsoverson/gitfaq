@@ -142,4 +142,18 @@ git clean -fdx
 ```
 ------------------------------------------------
 
+## What is the difference between fetch and pull?
 
+Pull = Fetch + Merge
+
+------------------------------------------------
+
+## How do I get a list of files that have changed since a commit?
+
+After getting the appropriate hash from a command like `git log`
+
+```
+git diff --name-only cda409f...
+```
+
+------------------------------------------------
