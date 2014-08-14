@@ -157,3 +157,50 @@ git diff --name-only cda409f...
 ```
 
 ------------------------------------------------
+
+## What is difference between master & HEAD?
+ 
+`master` is the common name for the default branch. It doesn't need to exist, but it often does.
+
+`HEAD` is the leading commit of a branch. For example, if the following represents a `master` branch with commit hashes 
+`A-G` in sequential order, the commit `G` represents the `HEAD` of `master`. 
+
+```
+master    A-B-C-D-E-F-G
+```
+
+ There is a `HEAD` for every branch.
+
+------------------------------------------------
+
+## What is 'detached head'?
+
+```
+master    A-B-C-D-E-F-G
+```
+
+Using the example above, if you check out anything but `G` your current "HEAD" is detached from a branch.
+ 
+You can create and move to a branch from the commit and you will be at the `HEAD` of the new branch.
+
+To get back to where you likely want to be, you want to check out a relevant branch, eg
+
+```
+git checkout master
+```
+
+ 
+------------------------------------------------
+
+## What is origin?
+
+Origin is the default name for the remote server. "Remotes" can be named anything, you can see the names of all
+ your remotes with the command `remote`
+ 
+```
+$ git remote -v
+origin	git@github.com:jsoverson/gitfaq.git (fetch)
+origin	git@github.com:jsoverson/gitfaq.git (push)
+```
+
+------------------------------------------------
