@@ -5,6 +5,8 @@ tagline:
 ---
 {% include JB/setup %}
 
+Want to answer or ask a question? Check out the [unanswered page](./unanswered.html).
+
 ## How do I start a new git repository?
 
 ```
