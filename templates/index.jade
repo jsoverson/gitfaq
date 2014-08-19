@@ -1,0 +1,43 @@
+---
+title : Help without manpages
+---
+extends layout
+
+block content
+  .page-header
+    h1 GIT FAQ
+      small  Help without manpages.
+
+  :markdown
+    Want to answer or ask a question?
+    Fork the [repository](https://github.com/jsoverson/gitfaq) and check out the [unanswered page](./unanswered.html).
+
+  div
+    each article in articles
+      - console.log(article.title)
+      nav
+        a(href="##{article.title}")= article.title
+
+  each article in articles
+    a(name=article.title)
+    article.article.intro
+      header
+        h2
+          a(href=article.url)= article.title
+      section.content
+        if article.intro.length > 0
+          | !{ typogr(article.intro).typogrify() }
+        if article.hasMore
+          p.more
+            a(href=article.url) more
+    hr
+
+block prepend footer
+  div.nav
+    if prevPage
+      a(href=prevPage.url) « Newer
+    if nextPage
+      a(href=nextPage.url) Next page »
+
+
+

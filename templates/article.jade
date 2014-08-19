@@ -1,0 +1,23 @@
+
+extends layout
+
+block append vars
+  - bodyclass = 'article-detail'
+
+block prepend title
+  | #{ page.title + " - "}
+
+block header
+  h1= page.title
+
+block content
+  if page
+    h2= page.title
+  article.article
+    section.content!= typogr(page.html).typogrify()
+
+block prepend footer
+  div.nav
+    a(href=contents.index.url) « Full blog
+
+
