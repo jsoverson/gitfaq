@@ -17,8 +17,3 @@ tagline:
 
 ## Are submodules bad?
 
-## What is rebasing?
-
-## Is rebasing bad?
-
-## What is commit “squashing”?

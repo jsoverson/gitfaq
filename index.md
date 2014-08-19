@@ -19,6 +19,15 @@ git push
 
 ------------------------------------------------
 
+## How do I commit a file?
+
+```
+git add file.js # stage the file
+git commit      # commit the file
+```
+
+------------------------------------------------
+
 ## How do I ignore a file pattern?
 
 ```
@@ -30,15 +39,6 @@ If you haven't ignored anything yet, this creates a `.gitignore` file which you 
 ```
 git add .gitignore
 git commit -m 'added .gitignore'
-```
-
-------------------------------------------------
-
-## How do I commit a file?
-
-```
-git add file.js # stage the file
-git commit      # commit the file
 ```
 
 ------------------------------------------------
@@ -178,14 +178,14 @@ git diff --name-only cda409f...
 
 `HEAD` can be thought of as a variable pointing to a specific commit. It can change and isn't related to a branch.
 
-Issuing new commits changes `HEAD`, checking anything out changes `HEAD`.
+Issuing new commits changes `HEAD`, checking anything out changes `HEAD`. `HEAD` is simply a "you are here" marker.
 
 ------------------------------------------------
 
 ## What is a "detached head"?
 
 ```
-master    A-B-C-D-E-F-G
+A-B-C-D-E-F-G   master
 ```
 
 Using the example above where the `master` branch has commits `A-G`, if you check out master you will be placed at the 'tip'
@@ -267,5 +267,110 @@ $ git remote -v
 origin	git@github.com:jsoverson/gitfaq.git (fetch)
 origin	git@github.com:jsoverson/gitfaq.git (push)
 ```
+
+------------------------------------------------
+
+## What is "rebasing"?
+
+Rebasing is establishing a new base for a series of commits.
+ 
+In the example below, the branch `feature` deviated at commit `B`, while the `master` branch moved along in parallel.
+
+```
+A-B-C-D-E    master
+   \
+    X-Y-Z    feature
+```
+
+Rebasing essentially rewinds the commits on a branch, brings the branch up to date with the rebase target, and then 
+replays the rewound commits over it, leaving the timeline looking like this.
+
+```
+A-B-C-D-E        master
+        \
+         X-Y-Z   feature
+```
+
+{{ site.warning.history }}
+
+------------------------------------------------
+
+## Is rebasing bad?
+
+Rebasing isn't good or bad, it's just different. It's common to hear people advise against rebasing because it's easier
+to assume people don't know what they are doing than it is to teach people to do something correctly.
+ 
+Problems can arise because rebasing rewrites the history. In the example above, the history of the `feature` branch is
+changed after the rebase and, if this was a shared branch, other developers wouldn't be able to cleanly get up to date.
+
+Rebasing is valuable because it leaves the history cleaner with fewer merge commits and more accurately describes 
+common development intentions. 
+
+Think about the flow behind keeping a `feature` branch like below up to date with `master`.
+
+```
+A-B-C-D-E    master
+   \
+    X-Y-Z    feature
+```
+
+The goal isn't, necessarily, to regularly "merge" `master` into `feature` en masse, the goal is to ensure that the work 
+done in `feature` simply stays up to date with the latest code in `master`. This is a great reason to use rebase; `X-Y-Z` get
+rewound, `feature` is then pulled up to date with `master`, and the commits are replayed essentially making it feel
+like your work has always been done on top of the latest code in `master`.
+
+------------------------------------------------
+
+## What is “squashing”?
+
+Squashing commits is just what it sounds like, compressing multiple commits into one. There are multiple ways of doing
+this but the spirit behind the reasoning is the desire to keep git history clean and logical.
+
+You can squash interactively via `git rebase`, eg
+
+```
+git rebase -i HEAD~3 # interactively rebase from 3 commits behind HEAD
+```
+
+This command will bring up your editor with some helpful documentation and list of those commits and messages.
+
+```
+pick f53d15b fixed edge case with IE5
+pick 930c0e5 added code coverage
+pick fa7c471 fixed lint errors
+pick fb57c85 added feature Foo
+
+# Rebase 0a4b808..db5d725 onto 0a4b808
+#
+# Commands:
+#  p, pick = use commit
+#  r, reword = use commit, but edit the commit message
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#  f, fixup = like "squash", but discard this commit's log message
+#  x, exec = run command (the rest of the line) using shell
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+```
+
+To squash the last 4 commits into the most recent, you would change `pick` to `squash` for commits 2, 3, and 4.
+
+```
+pick f53d15b fixed edge case with IE5
+squash 930c0e5 added code coverage
+squash fa7c471 fixed lint errors
+squash fb57c85 added feature Foo
+```
+
+When the file is saved and the editor is quit, git will automatically squash those 4 commits into one. An editor
+will then pop up again allowing you to change the commit message for the resulting commit(s).
+
+{{ site.warning.history }}
 
 ------------------------------------------------

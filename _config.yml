@@ -27,7 +27,7 @@ maruku:
   fenced_code_blocks: true
 
 warning:
-  history: <span class=warn><em>Warning</em> This changes history! Do not do this on a shared branch that has been pushed.</span>
+  history: <span class=warn><em>Warning</em> This rewrites history! Be wary if this is done on a shared branch.</span>
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
