@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/gh-fork-ribbons.css">
+  </head>
+  <body></body>
+  <div class="github-fork-ribbon-wrapper right">
+    <div class="github-fork-ribbon"><a href="https://github.com/jsoverson/gitfaq">Fork me on GitHub</a></div>
+  </div>
+  <div id="wrap">
+    <nav role="navigation" class="navbar navbar-default">
+      <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - What is a &quot;detached head&quot;?</a></div>
+    </nav>
+    <div class="container">
+      <h2>What is a &quot;detached head&quot;?</h2>
+      <article class="article">
+        <section class="content"><pre><code>master    A-B-C-D-E-F-G
+</code></pre><p>Using the example above where the <code>master</code> branch has commits <code>A-G</code>, if you check out master you will be placed at the ‘tip’
+of master, commit <code>G</code>. If you remain at the tip of a branch, you are considered&nbsp;“attached.”</p>
+<p>If you check out an arbitrary commit, you are no longer necessarily associated with a branch and are considered&nbsp;“detached.”</p>
+<p>This is useful to explore the state of code at a commit, and you can also create and move to a branch from a “detached head”&nbsp;state.</p>
+<p>If this state was unintentional, you can get back to where you likely want to be by checking out the branch you expected to be on,&nbsp;eg</p>
+<pre><code>$ git checkout master
+Previous HEAD position was 183409d... added file.txt
+Switched to branch &#39;master&#39;
+</code></pre><p>Try navigating through detached head by yourself. The following block sets up a fresh git repository with two&nbsp;commits.</p>
+<pre><code>git init
+touch file.txt
+git add file.txt
+git commit -m &#39;added file.txt&#39;
+touch file2.txt
+git add file2.txt
+git commit -m &#39;added file2.txt&#39;
+</code></pre><p><code>HEAD</code> is now at the tip of master. Check out the previous commit by issuing the command <code>git checkout HEAD~1</code> which references
+the commit 1 before <code>HEAD</code>.</p>
+<pre><code>$ git checkout HEAD~1
+git co HEAD~1
+Note: checking out &#39;HEAD~1&#39;.
+
+You are in &#39;detached HEAD&#39; state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+HEAD is now at 183409d... added file.txt
+</code></pre><p>To get back to the tip of master, <code>checkout master</code>.</p>
+<pre><code>$ git checkout master
+Previous HEAD position was 183409d... added file.txt
+Switched to branch &#39;master&#39;
+</code></pre><p>Notice, though, if you try to check out what commit the tip of master was initially pointing to you still will be&nbsp;detached!</p>
+<pre><code>$ git co ec3...7da
+Previous HEAD position was 183409d... added file.txt
+HEAD is now at ec36c1b... added file2.txt
+$ git status
+HEAD detached at ec36c1b
+nothing to commit, working directory clean
+</code></pre></section>
+      </article>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="container"></div>
+  </div>
+  <script src="/vendor/jquery/jquery.2.1.1.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'GA TOKEN HERE']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</html>
