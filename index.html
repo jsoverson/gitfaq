@@ -27,15 +27,15 @@ Fork the <a href="https://github.com/jsoverson/gitfaq">repository</a> or <a href
         <nav><a href="#How do I create a branch?">How do I create a branch?</a></nav>
         <nav><a href="#How do I get updates from the server?">How do I get updates from the server?</a></nav>
         <nav><a href="#How do I get a list of files that have changed since a commit?">How do I get a list of files that have changed since a commit?</a></nav>
+        <nav><a href="#How do I ignore a file pattern?">How do I ignore a file pattern?</a></nav>
         <nav><a href="#How do I push my changes?">How do I push my changes?</a></nav>
         <nav><a href="#How do I remove all untracked files?">How do I remove all untracked files?</a></nav>
-        <nav><a href="#How do I ignore a file pattern?">How do I ignore a file pattern?</a></nav>
         <nav><a href="#How do I completely reset my local repository?">How do I completely reset my local repository?</a></nav>
         <nav><a href="#How do I revert all uncommitted changes?">How do I revert all uncommitted changes?</a></nav>
         <nav><a href="#How do I undo a commit?">How do I undo a commit?</a></nav>
         <nav><a href="#How do I undo git add?">How do I undo git add?</a></nav>
-        <nav><a href="#What is a &quot;detached head&quot;?">What is a &quot;detached head&quot;?</a></nav>
         <nav><a href="#What if I forgot to add a file in my last commit?">What if I forgot to add a file in my last commit?</a></nav>
+        <nav><a href="#What is a &quot;detached head&quot;?">What is a &quot;detached head&quot;?</a></nav>
         <nav><a href="#What is &quot;origin&quot;?">What is &quot;origin&quot;?</a></nav>
         <nav><a href="#What is the difference between fetch and pull?">What is the difference between fetch and pull?</a></nav>
         <nav><a href="#What is difference between master &amp; HEAD?">What is difference between master &amp; HEAD?</a></nav>
@@ -102,6 +102,18 @@ git checkout -b &lt;branch&gt;    # branches and moves to the branch in one comm
 </code></pre>
         </section>
       </article>
+      <hr><a name="How do I ignore a file pattern?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-ignore-a-file-pattern.html">How do I ignore a file pattern?</a></h2>
+        </header>
+        <section class="content"><pre><code>git ignore &#39;*.swp&#39;
+</code></pre><p>If you haven’t ignored anything yet, this creates a <code>.gitignore</code> file which you probably want to add and&nbsp;track.</p>
+<pre><code>git add .gitignore
+git commit -m &#39;added .gitignore&#39;
+</code></pre>
+        </section>
+      </article>
       <hr><a name="How do I push my changes?"></a>
       <article class="article intro">
         <header>
@@ -118,18 +130,6 @@ git push origin branch-name
           <h2><a href="/articles/how-do-i-remove-all-untracked-files.html">How do I remove all untracked files?</a></h2>
         </header>
         <section class="content"><pre><code>git clean -fd
-</code></pre>
-        </section>
-      </article>
-      <hr><a name="How do I ignore a file pattern?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-ignore-a-file-pattern.html">How do I ignore a file pattern?</a></h2>
-        </header>
-        <section class="content"><pre><code>git ignore &#39;*.swp&#39;
-</code></pre><p>If you haven’t ignored anything yet, this creates a <code>.gitignore</code> file which you probably want to add and&nbsp;track.</p>
-<pre><code>git add .gitignore
-git commit -m &#39;added .gitignore&#39;
 </code></pre>
         </section>
       </article>
@@ -177,6 +177,18 @@ git checkout somedir/ # reset all files in somedir/
 </code></pre><p><em>or</em> </p>
 <pre><code>git reset file.txt
 </code></pre>
+        </section>
+      </article>
+      <hr><a name="What if I forgot to add a file in my last commit?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/what-if-i-forgot-to-add-a-file.html">What if I forgot to add a file in my last commit?</a></h2>
+        </header>
+        <section class="content"><pre><code>git commit       # the original commit
+git add file.js  # the file that needed to be included
+git commit --amend  # amend the commit in step 1 with the added file
+</code></pre><p>This will add the file to the previous commit and replace it with a new&nbsp;commit.</p>
+
         </section>
       </article>
       <hr><a name="What is a &quot;detached head&quot;?"></a>
@@ -231,18 +243,6 @@ nothing to commit, working directory clean
 </code></pre>
         </section>
       </article>
-      <hr><a name="What if I forgot to add a file in my last commit?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/what-if-i-forgot-to-add-a-file.html">What if I forgot to add a file in my last commit?</a></h2>
-        </header>
-        <section class="content"><pre><code>git commit       # the original commit
-git add file.js  # the file that needed to be included
-git commit --amend  # amend the commit in step 1 with the added file
-</code></pre><p>This will add the file to the previous commit and replace it with a new&nbsp;commit.</p>
-
-        </section>
-      </article>
       <hr><a name="What is &quot;origin&quot;?"></a>
       <article class="article intro">
         <header>
@@ -282,11 +282,9 @@ origin    git@github.com:jsoverson/gitfaq.git (push)
   <div id="footer">
     <div class="container"></div>
   </div>
-  <script src="/vendor/jquery/jquery.2.1.1.min.js"></script>
-  <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
   <script>
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'GA TOKEN HERE']);
+    _gaq.push(['_setAccount', 'UA-53866202-1']);
     _gaq.push(['_trackPageview']);
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
