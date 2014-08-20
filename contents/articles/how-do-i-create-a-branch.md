@@ -4,9 +4,13 @@ template: article.jade
 ---
 
 ```
-git branch <branch>   # just creates a branch off the current sha
-git checkout <branch> # actually moves to the branch
+git branch <branch>      # just creates a branch off the current sha
+git checkout <branch>    # actually moves to the branch
+```
 
-git checkout -b <branch>    # branches and moves to the branch in one command
+This can be simplified to:
+
+```
+git checkout -b <branch> # branches and moves to the branch in one command
 ```
 
