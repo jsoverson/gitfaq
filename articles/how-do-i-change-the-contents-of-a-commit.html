@@ -12,15 +12,16 @@
   </div>
   <div id="wrap">
     <nav role="navigation" class="navbar navbar-default">
-      <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - How do I create a branch?</a></div>
+      <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - How do I change the contents of a commit I have not pushed?</a></div>
     </nav>
     <div class="container">
-      <h2>How do I create a branch?</h2>
+      <h2>How do I change the contents of a commit I have not pushed?</h2>
       <article class="article">
-        <section class="content"><pre><code>git branch &lt;branch&gt;      # just creates a branch off the current sha
-git checkout &lt;branch&gt;    # actually moves to the branch
-</code></pre><p>This can be simplified&nbsp;to:</p>
-<pre><code>git checkout -b &lt;branch&gt; # branches and moves to the branch in one command
+        <section class="content"><pre><code>git commit --amend &lt;files&gt;
+</code></pre><p>or </p>
+<pre><code>git commit --amend --all
+</code></pre><p>If the commit message does not need to be changed, add <code>--no-edit</code> eg</p>
+<pre><code>git commit --amend --all --no-edit
 </code></pre></section>
       </article>
     </div>
