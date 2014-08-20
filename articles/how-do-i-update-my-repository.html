@@ -18,14 +18,10 @@
       <h2>How do I update my repository?</h2>
       <article class="article">
         <section class="content"><pre><code>git pull [remote] [branch]
-</code></pre><p>This fetches the changes from the remote branch (ie <code>origin master</code>) and merges them into your current&nbsp;branch.</p>
-<p>This is essentially&nbsp;doing:</p>
-<pre><code>git fetch [remote] [branch]
-git merge FETCH_HEAD
-</code></pre><p><code>FETCH_HEAD</code> is a temporary reference pointing to the tip of what was just fetched, <code>[remote]/[branch]</code> could also be&nbsp;used.</p>
-<p>To update using&nbsp;rebase:</p>
+</code></pre><p>To update using rebase&nbsp;: </p>
 <pre><code>git pull --rebase [remote] [branch]
 </code></pre><p>This performs the same as above, but using <code>rebase</code> instead of <code>merge</code>.</p>
+<p>(See also “What is the difference between fetch and pull” for more&nbsp;details)</p>
 </section>
       </article>
     </div>

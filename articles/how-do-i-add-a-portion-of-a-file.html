@@ -12,16 +12,28 @@
   </div>
   <div id="wrap">
     <nav role="navigation" class="navbar navbar-default">
-      <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - How do I change the contents of a commit I have not pushed?</a></div>
+      <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - How do I add only a portion of a file?</a></div>
     </nav>
     <div class="container">
-      <h2>How do I change the contents of a commit I have not pushed?</h2>
+      <h2>How do I add only a portion of a file?</h2>
       <article class="article">
-        <section class="content"><pre><code>git commit --amend &lt;files&gt;
-</code></pre><p>or</p>
-<pre><code>git commit --amend --all
-</code></pre><p>If the commit message does not need to be changed, add <code>--no-edit</code> eg</p>
-<pre><code>git commit --amend --all --no-edit
+        <section class="content"><pre><code>git add --patch &lt;file&gt;
+</code></pre><p>This brings up an interactive interface that moves through each individual change to a file, allowing you to
+only stage the changes that you&nbsp;want.</p>
+<pre><code>$ git add --patch package.json
+diff --git a/package.json b/package.json
+index 7a558a3..e03ce3f 100644
+--- a/package.json
++++ b/package.json
+@@ -2,7 +2,6 @@
+   &quot;name&quot;: &quot;package&quot;,
+   &quot;version&quot;: &quot;0.4.3&quot;,
+   &quot;description&quot;: &quot;this is an example package&quot;,
+-  &quot;keywords&quot;: [&quot;key&quot;, &quot;middleware&quot;, &quot;connect&quot;],
+   &quot;repository&quot;: &quot;git://github.com/foo/bar.git&quot;,
+   &quot;author&quot;: &quot;Joe Smith &lt;jsmith@google.com&gt; (http://google.com)&quot;,
+   &quot;repository&quot;: &quot;git://github.com/foo/bar&quot;,
+Stage this hunk [y,n,q,a,d,/,j,J,g,e,?]? y
 </code></pre></section>
       </article>
     </div>

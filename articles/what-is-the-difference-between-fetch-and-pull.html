@@ -17,8 +17,13 @@
     <div class="container">
       <h2>What is the difference between fetch and pull?</h2>
       <article class="article">
-        <section class="content"><p>Pull = Fetch +&nbsp;Merge</p>
-</section>
+        <section class="content"><p><code>git pull [remote] [branch]</code> is the same&nbsp;as</p>
+<pre><code>git fetch [remote] [branch]
+git merge [remote][/branch]
+</code></pre><p><code>git pull --rebase [remote] [branch]</code> is the same&nbsp;as </p>
+<pre><code>git fetch [remote] [branch]
+git rebase [remote][/branch]
+</code></pre></section>
       </article>
     </div>
   </div>

@@ -12,16 +12,22 @@
   </div>
   <div id="wrap">
     <nav role="navigation" class="navbar navbar-default">
-      <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - How do I change the contents of a commit I have not pushed?</a></div>
+      <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - What is a &quot;remote&quot;?</a></div>
     </nav>
     <div class="container">
-      <h2>How do I change the contents of a commit I have not pushed?</h2>
+      <h2>What is a &quot;remote&quot;?</h2>
       <article class="article">
-        <section class="content"><pre><code>git commit --amend &lt;files&gt;
-</code></pre><p>or</p>
-<pre><code>git commit --amend --all
-</code></pre><p>If the commit message does not need to be changed, add <code>--no-edit</code> eg</p>
-<pre><code>git commit --amend --all --no-edit
+        <section class="content"><p>The term “remote” is any remote destination that you may want to push or pull from. This is often a git
+repository hosted on a git server, ie&nbsp;github.com</p>
+<p>You can have multiple remotes that you push and pull&nbsp;from.</p>
+<p>You can view the remotes you have set with <code>git remote</code> and <code>git remote -v</code> gives you more important&nbsp;information.</p>
+<pre><code>$ git remote -v
+origin    git@github.com:jsoverson/gitfaq.git (fetch)
+origin    git@github.com:jsoverson/gitfaq.git (push)
+</code></pre><p>You can add new remotes via <code>git remote add &lt;destination&gt;</code> eg</p>
+<pre><code>$ git remote add mficarra git@github.com:mficarra/gitfaq.git
+</code></pre><p>You can change the destination via <code>git remote set-url &lt;remote&gt; &lt;destination&gt;</code></p>
+<pre><code>$ git remote set-url origin git@github.com:mficarra/gitfaq.git
 </code></pre></section>
       </article>
     </div>
