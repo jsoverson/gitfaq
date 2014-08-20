@@ -21,28 +21,57 @@
 Fork the <a href="https://github.com/jsoverson/gitfaq">repository</a> or <a href="https://github.com/jsoverson/gitfaq/issues">open an issue</a>!</p>
 
       <div>
-        <nav><a href="#How do I add only a portion of a file?">How do I add only a portion of a file?</a></nav>
         <nav><a href="#How do I create a new git repository?">How do I create a new git repository?</a></nav>
-        <nav><a href="#How do I change the contents of a commit I have not pushed?">How do I change the contents of a commit I have not pushed?</a></nav>
         <nav><a href="#How do I change my last commit message?">How do I change my last commit message?</a></nav>
+        <nav><a href="#How do I add only a portion of a file?">How do I add only a portion of a file?</a></nav>
+        <nav><a href="#How do I change the contents of a commit I have not pushed?">How do I change the contents of a commit I have not pushed?</a></nav>
         <nav><a href="#How do I commit a file?">How do I commit a file?</a></nav>
         <nav><a href="#How do I create a branch?">How do I create a branch?</a></nav>
         <nav><a href="#How do I get a list of files that have changed since a commit?">How do I get a list of files that have changed since a commit?</a></nav>
         <nav><a href="#How do I ignore a file pattern?">How do I ignore a file pattern?</a></nav>
         <nav><a href="#How do I push my changes?">How do I push my changes?</a></nav>
         <nav><a href="#How do I completely reset my local repository?">How do I completely reset my local repository?</a></nav>
-        <nav><a href="#How do I remove all untracked files?">How do I remove all untracked files?</a></nav>
         <nav><a href="#How do I revert all uncommitted changes?">How do I revert all uncommitted changes?</a></nav>
         <nav><a href="#How do I undo a commit?">How do I undo a commit?</a></nav>
+        <nav><a href="#How do I remove all untracked files?">How do I remove all untracked files?</a></nav>
         <nav><a href="#How do I undo git add?">How do I undo git add?</a></nav>
         <nav><a href="#How do I update my repository?">How do I update my repository?</a></nav>
         <nav><a href="#What if I forgot to add a file in my last commit?">What if I forgot to add a file in my last commit?</a></nav>
         <nav><a href="#What is a &quot;detached head&quot;?">What is a &quot;detached head&quot;?</a></nav>
         <nav><a href="#What is a &quot;remote&quot;?">What is a &quot;remote&quot;?</a></nav>
-        <nav><a href="#What is the difference between fetch and pull?">What is the difference between fetch and pull?</a></nav>
         <nav><a href="#What is &quot;origin&quot;?">What is &quot;origin&quot;?</a></nav>
+        <nav><a href="#What is the difference between fetch and pull?">What is the difference between fetch and pull?</a></nav>
         <nav><a href="#What is difference between master &amp; HEAD?">What is difference between master &amp; HEAD?</a></nav>
-      </div><a name="How do I add only a portion of a file?"></a>
+      </div><a name="How do I create a new git repository?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-I-create-a-new-git-repository.html">How do I create a new git repository?</a></h2>
+        </header>
+        <section class="content"><pre><code>git init
+git add .
+git commit -m ‘initial commit’
+git remote add origin &lt;destination&gt;
+git push -u origin master
+</code></pre>
+        </section>
+      </article>
+      <hr><a name="How do I change my last commit message?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-change-my-last-commit-message.html">How do I change my last commit message?</a></h2>
+        </header>
+        <section class="content"><pre><code>git commit --amend --only
+</code></pre><p>Or, without staged&nbsp;changes:</p>
+<pre><code>git commit --amend
+</code></pre><p><code>--amend</code> without other options combines the currently staged changes with the last commit and then opens an editor to
+ update the commit message. If you have staged changes, they will be&nbsp;added.</p>
+<p> To update the last message even if there are staged changes (<code>git status</code> reports files under <code>Changes to be committed</code>)
+ then you can use the <code>-o</code> (or <code>--only</code>) option to indicate you want to amend the last commit but only use the files
+ that were previously&nbsp;committed.</p>
+
+        </section>
+      </article>
+      <hr><a name="How do I add only a portion of a file?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/how-do-i-add-a-portion-of-a-file.html">How do I add only a portion of a file?</a></h2>
@@ -67,19 +96,6 @@ Stage this hunk [y,n,q,a,d,/,j,J,g,e,?]? y
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I create a new git repository?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-I-create-a-new-git-repository.html">How do I create a new git repository?</a></h2>
-        </header>
-        <section class="content"><pre><code>git init
-git add .
-git commit -m ‘initial commit’
-git remote add origin &lt;destination&gt;
-git push -u origin master
-</code></pre>
-        </section>
-      </article>
       <hr><a name="How do I change the contents of a commit I have not pushed?"></a>
       <article class="article intro">
         <header>
@@ -91,22 +107,6 @@ git push -u origin master
 </code></pre><p>If the commit message does not need to be changed, add <code>--no-edit</code> eg</p>
 <pre><code>git commit --amend --all --no-edit
 </code></pre>
-        </section>
-      </article>
-      <hr><a name="How do I change my last commit message?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-change-my-last-commit-message.html">How do I change my last commit message?</a></h2>
-        </header>
-        <section class="content"><pre><code>git commit --amend --only
-</code></pre><p>Or, without staged&nbsp;changes:</p>
-<pre><code>git commit --amend
-</code></pre><p><code>--amend</code> without other options combines the currently staged changes with the last commit and then opens an editor to
- update the commit message. If you have staged changes, they will be&nbsp;added.</p>
-<p> To update the last message even if there are staged changes (<code>git status</code> reports files under <code>Changes to be committed</code>)
- then you can use the <code>-o</code> (or <code>--only</code>) option to indicate you want to amend the last commit but only use the files
- that were previously&nbsp;committed.</p>
-
         </section>
       </article>
       <hr><a name="How do I commit a file?"></a>
@@ -174,15 +174,6 @@ git clean -fdx
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I remove all untracked files?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-remove-all-untracked-files.html">How do I remove all untracked files?</a></h2>
-        </header>
-        <section class="content"><pre><code>git clean -fd
-</code></pre>
-        </section>
-      </article>
       <hr><a name="How do I revert all uncommitted changes?"></a>
       <article class="article intro">
         <header>
@@ -207,6 +198,15 @@ git checkout somedir/ # reset all files in somedir/
 </code></pre>
         </section>
       </article>
+      <hr><a name="How do I remove all untracked files?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-remove-all-untracked-files.html">How do I remove all untracked files?</a></h2>
+        </header>
+        <section class="content"><pre><code>git clean -fd
+</code></pre>
+        </section>
+      </article>
       <hr><a name="How do I undo git add?"></a>
       <article class="article intro">
         <header>
@@ -227,7 +227,7 @@ git checkout somedir/ # reset all files in somedir/
 </code></pre><p>To update using rebase&nbsp;: </p>
 <pre><code>git pull --rebase [remote] [branch]
 </code></pre><p>This performs the same as above, but using <code>rebase</code> instead of <code>merge</code>.</p>
-<p>(See also “What is the difference between fetch and pull” for more&nbsp;details)</p>
+<p>(See also <a href="http://gitfaq.org/articles/what-is-the-difference-between-fetch-and-pull.html">What is the difference between fetch and pull</a> for more&nbsp;details)</p>
 
         </section>
       </article>
@@ -319,6 +319,19 @@ origin    git@github.com:jsoverson/gitfaq.git (push)
 </code></pre>
         </section>
       </article>
+      <hr><a name="What is &quot;origin&quot;?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/what-is-origin.html">What is &quot;origin&quot;?</a></h2>
+        </header>
+        <section class="content"><p>Origin is the default name for the remote server. “Remotes” can be named anything, you can see the names of all
+ your remotes with the command <code>remote</code></p>
+<pre><code>$ git remote -v
+origin    git@github.com:jsoverson/gitfaq.git (fetch)
+origin    git@github.com:jsoverson/gitfaq.git (push)
+</code></pre>
+        </section>
+      </article>
       <hr><a name="What is the difference between fetch and pull?"></a>
       <article class="article intro">
         <header>
@@ -330,19 +343,6 @@ git merge [remote][/branch]
 </code></pre><p><code>git pull --rebase [remote] [branch]</code> is the same&nbsp;as </p>
 <pre><code>git fetch [remote] [branch]
 git rebase [remote][/branch]
-</code></pre>
-        </section>
-      </article>
-      <hr><a name="What is &quot;origin&quot;?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/what-is-origin.html">What is &quot;origin&quot;?</a></h2>
-        </header>
-        <section class="content"><p>Origin is the default name for the remote server. “Remotes” can be named anything, you can see the names of all
- your remotes with the command <code>remote</code></p>
-<pre><code>$ git remote -v
-origin    git@github.com:jsoverson/gitfaq.git (fetch)
-origin    git@github.com:jsoverson/gitfaq.git (push)
 </code></pre>
         </section>
       </article>
