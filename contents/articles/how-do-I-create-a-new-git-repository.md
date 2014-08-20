@@ -7,6 +7,6 @@ template: article.jade
 git init
 git add .
 git commit -m ‘initial commit’
-git remote set-url origin <destination>
-git push
+git remote add origin <destination>
+git push -u origin master
 ```
