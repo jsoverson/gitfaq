@@ -8,3 +8,8 @@ git reset
 git checkout .
 git clean -fdx
 ```
+
+git clean options:
+-f      force
+-d      delete directories
+-x      ignore .gitignore
