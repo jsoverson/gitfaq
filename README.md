@@ -47,6 +47,12 @@ This is built with wintersmith, install via npm:
 $ npm install -g wintersmith
 ```
 
+Install local npm modules from within the gitfaq directory.
+
+```
+$ npm install
+```
+
 Preview changes with `wintersmith preview`
 
 ```
