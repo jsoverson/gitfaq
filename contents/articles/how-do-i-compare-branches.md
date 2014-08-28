@@ -7,10 +7,10 @@ Find commits on remote `master` branch which are not on our local `master` branc
 
     git cherry -v origin/master master
 
-Find commits on local `master` branch which are not on our local `feature-1` branch:
+Find commits on local `master` branch which are not on our local `feature` branch:
 
-    git cherry -v master feature-1
+    git cherry -v master feature
 
-Find commits added since the `1.0.0` tag which:
+Find commits added since the `1.0.0` tag:
 
     git cherry -v v1.0.0 master
