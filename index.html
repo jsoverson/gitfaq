@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="/css/gh-fork-ribbons.css">
   </head>
   <body></body>
-  <div class="github-fork-ribbon-wrapper right">
-    <div class="github-fork-ribbon"><a href="https://github.com/jsoverson/gitfaq">Fork me on GitHub</a></div>
-  </div>
   <div id="wrap">
     <nav role="navigation" class="navbar navbar-default">
       <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ </a></div>
@@ -21,29 +18,33 @@
 Fork the <a href="https://github.com/jsoverson/gitfaq">repository</a> or <a href="https://github.com/jsoverson/gitfaq/issues">open an issue</a>!</p>
 
       <div>
-        <nav><a href="#How do I create a new git repository?">How do I create a new git repository?</a></nav>
-        <nav><a href="#How do I change the contents of a commit I have not pushed?">How do I change the contents of a commit I have not pushed?</a></nav>
-        <nav><a href="#How do I change my last commit message?">How do I change my last commit message?</a></nav>
-        <nav><a href="#How do I add only a portion of a file?">How do I add only a portion of a file?</a></nav>
-        <nav><a href="#How do I commit a file?">How do I commit a file?</a></nav>
-        <nav><a href="#How do I create a branch?">How do I create a branch?</a></nav>
-        <nav><a href="#How do I compare branches?">How do I compare branches?</a></nav>
-        <nav><a href="#How do I delete a branch?">How do I delete a branch?</a></nav>
-        <nav><a href="#How do I get a list of files that have changed since a commit?">How do I get a list of files that have changed since a commit?</a></nav>
-        <nav><a href="#How do I ignore a file pattern?">How do I ignore a file pattern?</a></nav>
-        <nav><a href="#How do I push my changes?">How do I push my changes?</a></nav>
-        <nav><a href="#How do I remove all untracked files?">How do I remove all untracked files?</a></nav>
-        <nav><a href="#How do I revert all uncommitted changes?">How do I revert all uncommitted changes?</a></nav>
-        <nav><a href="#How do I undo git add?">How do I undo git add?</a></nav>
-        <nav><a href="#How do I undo a commit?">How do I undo a commit?</a></nav>
-        <nav><a href="#How do I completely reset my local repository?">How do I completely reset my local repository?</a></nav>
-        <nav><a href="#How do I update my repository?">How do I update my repository?</a></nav>
-        <nav><a href="#What if I forgot to add a file in my last commit?">What if I forgot to add a file in my last commit?</a></nav>
-        <nav><a href="#What is a &quot;detached head&quot;?">What is a &quot;detached head&quot;?</a></nav>
-        <nav><a href="#What is a &quot;remote&quot;?">What is a &quot;remote&quot;?</a></nav>
-        <nav><a href="#What is &quot;origin&quot;?">What is &quot;origin&quot;?</a></nav>
-        <nav><a href="#What is the difference between fetch and pull?">What is the difference between fetch and pull?</a></nav>
-        <nav><a href="#What is difference between master &amp; HEAD?">What is difference between master &amp; HEAD?</a></nav>
+        <nav>
+          <ul>
+            <li><a href="#How do I create a new git repository?">How do I create a new git repository?</a></li>
+            <li><a href="#How do I change my last commit message?">How do I change my last commit message?</a></li>
+            <li><a href="#How do I add only a portion of a file?">How do I add only a portion of a file?</a></li>
+            <li><a href="#How do I change the contents of a commit I have not pushed?">How do I change the contents of a commit I have not pushed?</a></li>
+            <li><a href="#How do I commit a file?">How do I commit a file?</a></li>
+            <li><a href="#How do I compare branches?">How do I compare branches?</a></li>
+            <li><a href="#How do I create a branch?">How do I create a branch?</a></li>
+            <li><a href="#How do I delete a branch?">How do I delete a branch?</a></li>
+            <li><a href="#How do I get a list of files that have changed since a commit?">How do I get a list of files that have changed since a commit?</a></li>
+            <li><a href="#How do I ignore a file pattern?">How do I ignore a file pattern?</a></li>
+            <li><a href="#How do I push my changes?">How do I push my changes?</a></li>
+            <li><a href="#How do I remove all untracked files?">How do I remove all untracked files?</a></li>
+            <li><a href="#How do I completely reset my local repository?">How do I completely reset my local repository?</a></li>
+            <li><a href="#How do I revert all uncommitted changes?">How do I revert all uncommitted changes?</a></li>
+            <li><a href="#How do I undo a commit?">How do I undo a commit?</a></li>
+            <li><a href="#How do I undo git add?">How do I undo git add?</a></li>
+            <li><a href="#How do I update my repository?">How do I update my repository?</a></li>
+            <li><a href="#What if I forgot to add a file in my last commit?">What if I forgot to add a file in my last commit?</a></li>
+            <li><a href="#What is a &quot;detached head&quot;?">What is a &quot;detached head&quot;?</a></li>
+            <li><a href="#What is a &quot;remote&quot;?">What is a &quot;remote&quot;?</a></li>
+            <li><a href="#What is &quot;origin&quot;?">What is &quot;origin&quot;?</a></li>
+            <li><a href="#What is difference between master &amp; HEAD?">What is difference between master &amp; HEAD?</a></li>
+            <li><a href="#What is the difference between fetch and pull?">What is the difference between fetch and pull?</a></li>
+          </ul>
+        </nav>
       </div><a name="How do I create a new git repository?"></a>
       <article class="article intro">
         <header>
@@ -54,19 +55,6 @@ git add .
 git commit -m ‘initial commit’
 git remote add origin &lt;destination&gt;
 git push -u origin master
-</code></pre>
-        </section>
-      </article>
-      <hr><a name="How do I change the contents of a commit I have not pushed?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-change-the-contents-of-a-commit.html">How do I change the contents of a commit I have not pushed?</a></h2>
-        </header>
-        <section class="content"><pre><code>git commit --amend &lt;files&gt;
-</code></pre><p>or</p>
-<pre><code>git commit --amend --all
-</code></pre><p>If the commit message does not need to be changed, add <code>--no-edit</code> eg</p>
-<pre><code>git commit --amend --all --no-edit
 </code></pre>
         </section>
       </article>
@@ -111,6 +99,19 @@ Stage this hunk [y,n,q,a,d,/,j,J,g,e,?]? y
 </code></pre>
         </section>
       </article>
+      <hr><a name="How do I change the contents of a commit I have not pushed?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-change-the-contents-of-a-commit.html">How do I change the contents of a commit I have not pushed?</a></h2>
+        </header>
+        <section class="content"><pre><code>git commit --amend &lt;files&gt;
+</code></pre><p>or</p>
+<pre><code>git commit --amend --all
+</code></pre><p>If the commit message does not need to be changed, add <code>--no-edit</code> eg</p>
+<pre><code>git commit --amend --all --no-edit
+</code></pre>
+        </section>
+      </article>
       <hr><a name="How do I commit a file?"></a>
       <article class="article intro">
         <header>
@@ -118,18 +119,6 @@ Stage this hunk [y,n,q,a,d,/,j,J,g,e,?]? y
         </header>
         <section class="content"><pre><code>git add file.js # stage the file
 git commit      # commit the file
-</code></pre>
-        </section>
-      </article>
-      <hr><a name="How do I create a branch?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-create-a-branch.html">How do I create a branch?</a></h2>
-        </header>
-        <section class="content"><pre><code>git branch &lt;branch&gt;      # just creates a branch off the current sha
-git checkout &lt;branch&gt;    # actually moves to the branch
-</code></pre><p>This can be simplified&nbsp;to:</p>
-<pre><code>git checkout -b &lt;branch&gt; # branches and moves to the branch in one command
 </code></pre>
         </section>
       </article>
@@ -144,6 +133,18 @@ git checkout &lt;branch&gt;    # actually moves to the branch
 <pre><code>git cherry -v master feature
 </code></pre><p>Find commits added since the <code>1.0.0</code> tag:</p>
 <pre><code>git cherry -v v1.0.0 master
+</code></pre>
+        </section>
+      </article>
+      <hr><a name="How do I create a branch?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-create-a-branch.html">How do I create a branch?</a></h2>
+        </header>
+        <section class="content"><pre><code>git branch &lt;branch&gt;      # just creates a branch off the current sha
+git checkout &lt;branch&gt;    # actually moves to the branch
+</code></pre><p>This can be simplified&nbsp;to:</p>
+<pre><code>git checkout -b &lt;branch&gt; # branches and moves to the branch in one command
 </code></pre>
         </section>
       </article>
@@ -207,6 +208,17 @@ git push origin branch-name
 </code></pre>
         </section>
       </article>
+      <hr><a name="How do I completely reset my local repository?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-reset-my-local-repository.html">How do I completely reset my local repository?</a></h2>
+        </header>
+        <section class="content"><pre><code>git reset
+git checkout .
+git clean -fdx
+</code></pre>
+        </section>
+      </article>
       <hr><a name="How do I revert all uncommitted changes?"></a>
       <article class="article intro">
         <header>
@@ -216,17 +228,6 @@ git push origin branch-name
 git checkout file.txt # reset file.txt
 git checkout somedir/ # reset all files in somedir/
 </code></pre><pre><code>git reset --hard HEAD
-</code></pre>
-        </section>
-      </article>
-      <hr><a name="How do I undo git add?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-undo-git-add.html">How do I undo git add?</a></h2>
-        </header>
-        <section class="content"><pre><code>git reset
-</code></pre><p><em>or</em> </p>
-<pre><code>git reset file.txt
 </code></pre>
         </section>
       </article>
@@ -242,14 +243,14 @@ git checkout somedir/ # reset all files in somedir/
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I completely reset my local repository?"></a>
+      <hr><a name="How do I undo git add?"></a>
       <article class="article intro">
         <header>
-          <h2><a href="/articles/how-do-i-reset-my-local-repository.html">How do I completely reset my local repository?</a></h2>
+          <h2><a href="/articles/how-do-i-undo-git-add.html">How do I undo git add?</a></h2>
         </header>
         <section class="content"><pre><code>git reset
-git checkout .
-git clean -fdx
+</code></pre><p><em>or</em> </p>
+<pre><code>git reset file.txt
 </code></pre>
         </section>
       </article>
@@ -367,6 +368,17 @@ origin    git@github.com:jsoverson/gitfaq.git (push)
 </code></pre>
         </section>
       </article>
+      <hr><a name="What is difference between master &amp; HEAD?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/what-is-the-difference-between-master-and-head.html">What is difference between master &amp; HEAD?</a></h2>
+        </header>
+        <section class="content"><p><code>master</code> is the common name for the default branch. It doesn’t need to exist, but it often&nbsp;does.</p>
+<p><code>HEAD</code> can be thought of as a variable pointing to a specific commit. It can change and isn’t related to a&nbsp;branch.</p>
+<p>Issuing new commits changes <code>HEAD</code>, checking anything out changes <code>HEAD</code>.</p>
+
+        </section>
+      </article>
       <hr><a name="What is the difference between fetch and pull?"></a>
       <article class="article intro">
         <header>
@@ -381,19 +393,11 @@ git rebase [remote][/branch]
 </code></pre>
         </section>
       </article>
-      <hr><a name="What is difference between master &amp; HEAD?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/what-is-the-difference-between-master-and-head.html">What is difference between master &amp; HEAD?</a></h2>
-        </header>
-        <section class="content"><p><code>master</code> is the common name for the default branch. It doesn’t need to exist, but it often&nbsp;does.</p>
-<p><code>HEAD</code> can be thought of as a variable pointing to a specific commit. It can change and isn’t related to a&nbsp;branch.</p>
-<p>Issuing new commits changes <code>HEAD</code>, checking anything out changes <code>HEAD</code>.</p>
-
-        </section>
-      </article>
       <hr>
     </div>
+  </div>
+  <div class="github-fork-ribbon-wrapper right">
+    <div class="github-fork-ribbon"><a href="https://github.com/jsoverson/gitfaq">Fork me on GitHub</a></div>
   </div>
   <div id="footer">
     <div class="container"></div>
