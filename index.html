@@ -22,19 +22,21 @@ Fork the <a href="https://github.com/jsoverson/gitfaq">repository</a> or <a href
 
       <div>
         <nav><a href="#How do I create a new git repository?">How do I create a new git repository?</a></nav>
+        <nav><a href="#How do I change the contents of a commit I have not pushed?">How do I change the contents of a commit I have not pushed?</a></nav>
         <nav><a href="#How do I change my last commit message?">How do I change my last commit message?</a></nav>
         <nav><a href="#How do I add only a portion of a file?">How do I add only a portion of a file?</a></nav>
-        <nav><a href="#How do I change the contents of a commit I have not pushed?">How do I change the contents of a commit I have not pushed?</a></nav>
         <nav><a href="#How do I commit a file?">How do I commit a file?</a></nav>
         <nav><a href="#How do I create a branch?">How do I create a branch?</a></nav>
+        <nav><a href="#How do I compare branches?">How do I compare branches?</a></nav>
+        <nav><a href="#How do I delete a branch?">How do I delete a branch?</a></nav>
         <nav><a href="#How do I get a list of files that have changed since a commit?">How do I get a list of files that have changed since a commit?</a></nav>
         <nav><a href="#How do I ignore a file pattern?">How do I ignore a file pattern?</a></nav>
         <nav><a href="#How do I push my changes?">How do I push my changes?</a></nav>
-        <nav><a href="#How do I completely reset my local repository?">How do I completely reset my local repository?</a></nav>
-        <nav><a href="#How do I revert all uncommitted changes?">How do I revert all uncommitted changes?</a></nav>
-        <nav><a href="#How do I undo a commit?">How do I undo a commit?</a></nav>
         <nav><a href="#How do I remove all untracked files?">How do I remove all untracked files?</a></nav>
+        <nav><a href="#How do I revert all uncommitted changes?">How do I revert all uncommitted changes?</a></nav>
         <nav><a href="#How do I undo git add?">How do I undo git add?</a></nav>
+        <nav><a href="#How do I undo a commit?">How do I undo a commit?</a></nav>
+        <nav><a href="#How do I completely reset my local repository?">How do I completely reset my local repository?</a></nav>
         <nav><a href="#How do I update my repository?">How do I update my repository?</a></nav>
         <nav><a href="#What if I forgot to add a file in my last commit?">What if I forgot to add a file in my last commit?</a></nav>
         <nav><a href="#What is a &quot;detached head&quot;?">What is a &quot;detached head&quot;?</a></nav>
@@ -52,6 +54,19 @@ git add .
 git commit -m ‘initial commit’
 git remote add origin &lt;destination&gt;
 git push -u origin master
+</code></pre>
+        </section>
+      </article>
+      <hr><a name="How do I change the contents of a commit I have not pushed?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-change-the-contents-of-a-commit.html">How do I change the contents of a commit I have not pushed?</a></h2>
+        </header>
+        <section class="content"><pre><code>git commit --amend &lt;files&gt;
+</code></pre><p>or</p>
+<pre><code>git commit --amend --all
+</code></pre><p>If the commit message does not need to be changed, add <code>--no-edit</code> eg</p>
+<pre><code>git commit --amend --all --no-edit
 </code></pre>
         </section>
       </article>
@@ -96,19 +111,6 @@ Stage this hunk [y,n,q,a,d,/,j,J,g,e,?]? y
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I change the contents of a commit I have not pushed?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-change-the-contents-of-a-commit.html">How do I change the contents of a commit I have not pushed?</a></h2>
-        </header>
-        <section class="content"><pre><code>git commit --amend &lt;files&gt;
-</code></pre><p>or</p>
-<pre><code>git commit --amend --all
-</code></pre><p>If the commit message does not need to be changed, add <code>--no-edit</code> eg</p>
-<pre><code>git commit --amend --all --no-edit
-</code></pre>
-        </section>
-      </article>
       <hr><a name="How do I commit a file?"></a>
       <article class="article intro">
         <header>
@@ -128,6 +130,39 @@ git commit      # commit the file
 git checkout &lt;branch&gt;    # actually moves to the branch
 </code></pre><p>This can be simplified&nbsp;to:</p>
 <pre><code>git checkout -b &lt;branch&gt; # branches and moves to the branch in one command
+</code></pre>
+        </section>
+      </article>
+      <hr><a name="How do I compare branches?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-compare-branches.html">How do I compare branches?</a></h2>
+        </header>
+        <section class="content"><p>Find commits on remote <code>master</code> branch which are not on our local <code>master</code> branch:</p>
+<pre><code>git cherry -v origin/master master
+</code></pre><p>Find commits on local <code>master</code> branch which are not on our local <code>feature</code> branch:</p>
+<pre><code>git cherry -v master feature
+</code></pre><p>Find commits added since the <code>1.0.0</code> tag:</p>
+<pre><code>git cherry -v v1.0.0 master
+</code></pre>
+        </section>
+      </article>
+      <hr><a name="How do I delete a branch?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-delete-a-branch.html">How do I delete a branch?</a></h2>
+        </header>
+        <section class="content"><p>Delete a local branch <code>feature</code>:</p>
+<pre><code>git branch -d feature
+</code></pre><p>This will fail if the branch is not merged. To delete the branch&nbsp;regardless:</p>
+<pre><code>git branch -D feature
+</code></pre><p>To delete a remote branch <code>feature</code> on remote <code>origin</code> (warning: There is no&nbsp;confirmation!):</p>
+<pre><code>git push origin :feature
+</code></pre><p>Note: <code>git-branch</code> documentation lists documentation for the option <code>-r</code> which works on remote <em>tracking</em> branches, not
+branches on the remote; <code>git branch -D -r origin/feature</code> will delete the remote tracking branch <code>origin/feature</code>, 
+not the branch <code>feature</code> on remote <code>origin</code>. Pulling/fetching from the remote again will recreate that tracking&nbsp;branch.</p>
+<p>To delete remote tracking branches that no longer exist on the&nbsp;remote:</p>
+<pre><code>git fetch --prune
 </code></pre>
         </section>
       </article>
@@ -163,14 +198,12 @@ git push origin branch-name
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I completely reset my local repository?"></a>
+      <hr><a name="How do I remove all untracked files?"></a>
       <article class="article intro">
         <header>
-          <h2><a href="/articles/how-do-i-reset-my-local-repository.html">How do I completely reset my local repository?</a></h2>
+          <h2><a href="/articles/how-do-i-remove-all-untracked-files.html">How do I remove all untracked files?</a></h2>
         </header>
-        <section class="content"><pre><code>git reset
-git checkout .
-git clean -fdx
+        <section class="content"><pre><code>git clean -fd
 </code></pre>
         </section>
       </article>
@@ -186,6 +219,17 @@ git checkout somedir/ # reset all files in somedir/
 </code></pre>
         </section>
       </article>
+      <hr><a name="How do I undo git add?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-undo-git-add.html">How do I undo git add?</a></h2>
+        </header>
+        <section class="content"><pre><code>git reset
+</code></pre><p><em>or</em> </p>
+<pre><code>git reset file.txt
+</code></pre>
+        </section>
+      </article>
       <hr><a name="How do I undo a commit?"></a>
       <article class="article intro">
         <header>
@@ -198,23 +242,14 @@ git checkout somedir/ # reset all files in somedir/
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I remove all untracked files?"></a>
+      <hr><a name="How do I completely reset my local repository?"></a>
       <article class="article intro">
         <header>
-          <h2><a href="/articles/how-do-i-remove-all-untracked-files.html">How do I remove all untracked files?</a></h2>
-        </header>
-        <section class="content"><pre><code>git clean -fd
-</code></pre>
-        </section>
-      </article>
-      <hr><a name="How do I undo git add?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-undo-git-add.html">How do I undo git add?</a></h2>
+          <h2><a href="/articles/how-do-i-reset-my-local-repository.html">How do I completely reset my local repository?</a></h2>
         </header>
         <section class="content"><pre><code>git reset
-</code></pre><p><em>or</em> </p>
-<pre><code>git reset file.txt
+git checkout .
+git clean -fdx
 </code></pre>
         </section>
       </article>
@@ -306,16 +341,16 @@ nothing to commit, working directory clean
           <h2><a href="/articles/what-is-a-remote.html">What is a &quot;remote&quot;?</a></h2>
         </header>
         <section class="content"><p>The term “remote” is any remote destination that you may want to push or pull from. This is often a git
-repository hosted on a git server, ie&nbsp;github.com</p>
-<p>You can have multiple remotes that you push and pull&nbsp;from.</p>
+repository hosted on a git server like those run by&nbsp;Github.</p>
+<p>You can have multiple&nbsp;remotes.</p>
 <p>You can view the remotes you have set with <code>git remote</code> and <code>git remote -v</code> gives you more important&nbsp;information.</p>
 <pre><code>$ git remote -v
 origin    git@github.com:jsoverson/gitfaq.git (fetch)
 origin    git@github.com:jsoverson/gitfaq.git (push)
 </code></pre><p>You can add new remotes via <code>git remote add &lt;destination&gt;</code> eg</p>
-<pre><code>$ git remote add mficarra git@github.com:mficarra/gitfaq.git
+<pre><code>$ git remote add michaelficarra git@github.com:michaelficarra/gitfaq.git
 </code></pre><p>You can change the destination via <code>git remote set-url &lt;remote&gt; &lt;destination&gt;</code></p>
-<pre><code>$ git remote set-url origin git@github.com:mficarra/gitfaq.git
+<pre><code>$ git remote set-url origin git@github.com:michaelficarra/gitfaq.git
 </code></pre>
         </section>
       </article>
