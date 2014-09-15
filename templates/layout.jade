@@ -6,15 +6,15 @@ html
     link(rel="stylesheet" href="/css/main.css")
     link(rel="stylesheet" href="/css/gh-fork-ribbons.css")
   body
-  .github-fork-ribbon-wrapper.right
-    .github-fork-ribbon
-      a(href="https://github.com/jsoverson/gitfaq") Fork me on GitHub
   #wrap
     nav.navbar.navbar-default(role="navigation")
       .navbar-header
         a.navbar-brand(href="/") #{name} #{page ? ' - ' + page.title : ''}
     .container
       block content
+  .github-fork-ribbon-wrapper.right
+    .github-fork-ribbon
+      a(href="https://github.com/jsoverson/gitfaq") Fork me on GitHub
   #footer
     .container
   script.

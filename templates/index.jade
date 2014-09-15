@@ -13,10 +13,12 @@ block content
     Fork the [repository](https://github.com/jsoverson/gitfaq) or [open an issue](https://github.com/jsoverson/gitfaq/issues)!
 
   div
-    each article in articles
-      - console.log(article.title)
-      nav
-        a(href="##{article.title}")= article.title
+    nav
+      ul
+        each article in articles
+          - console.log(article.title)
+            li
+              a(href="##{article.title}")= article.title
 
   each article in articles
     a(name=article.title)
