@@ -21,10 +21,10 @@ Fork the <a href="https://github.com/jsoverson/gitfaq">repository</a> or <a href
         <nav>
           <ul>
             <li><a href="#How do I create a new git repository?">How do I create a new git repository?</a></li>
-            <li><a href="#How do I change my last commit message?">How do I change my last commit message?</a></li>
             <li><a href="#How do I add only a portion of a file?">How do I add only a portion of a file?</a></li>
             <li><a href="#How do I change the contents of a commit I have not pushed?">How do I change the contents of a commit I have not pushed?</a></li>
             <li><a href="#How do I commit a file?">How do I commit a file?</a></li>
+            <li><a href="#How do I change my last commit message?">How do I change my last commit message?</a></li>
             <li><a href="#How do I compare branches?">How do I compare branches?</a></li>
             <li><a href="#How do I create a branch?">How do I create a branch?</a></li>
             <li><a href="#How do I delete a branch?">How do I delete a branch?</a></li>
@@ -35,14 +35,14 @@ Fork the <a href="https://github.com/jsoverson/gitfaq">repository</a> or <a href
             <li><a href="#How do I completely reset my local repository?">How do I completely reset my local repository?</a></li>
             <li><a href="#How do I revert all uncommitted changes?">How do I revert all uncommitted changes?</a></li>
             <li><a href="#How do I undo a commit?">How do I undo a commit?</a></li>
-            <li><a href="#How do I undo git add?">How do I undo git add?</a></li>
             <li><a href="#How do I update my repository?">How do I update my repository?</a></li>
+            <li><a href="#How do I undo git add?">How do I undo git add?</a></li>
             <li><a href="#What if I forgot to add a file in my last commit?">What if I forgot to add a file in my last commit?</a></li>
             <li><a href="#What is a &quot;detached head&quot;?">What is a &quot;detached head&quot;?</a></li>
             <li><a href="#What is a &quot;remote&quot;?">What is a &quot;remote&quot;?</a></li>
             <li><a href="#What is &quot;origin&quot;?">What is &quot;origin&quot;?</a></li>
-            <li><a href="#What is difference between master &amp; HEAD?">What is difference between master &amp; HEAD?</a></li>
             <li><a href="#What is the difference between fetch and pull?">What is the difference between fetch and pull?</a></li>
+            <li><a href="#What is difference between master &amp; HEAD?">What is difference between master &amp; HEAD?</a></li>
           </ul>
         </nav>
       </div><a name="How do I create a new git repository?"></a>
@@ -56,22 +56,6 @@ git commit -m ‘initial commit’
 git remote add origin &lt;destination&gt;
 git push -u origin master
 </code></pre>
-        </section>
-      </article>
-      <hr><a name="How do I change my last commit message?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-change-my-last-commit-message.html">How do I change my last commit message?</a></h2>
-        </header>
-        <section class="content"><pre><code>git commit --amend --only
-</code></pre><p>Or, without staged&nbsp;changes:</p>
-<pre><code>git commit --amend
-</code></pre><p><code>--amend</code> without other options combines the currently staged changes with the last commit and then opens an editor to
- update the commit message. If you have staged changes, they will be&nbsp;added.</p>
-<p> To update the last message even if there are staged changes (<code>git status</code> reports files under <code>Changes to be committed</code>)
- then you can use the <code>-o</code> (or <code>--only</code>) option to indicate you want to amend the last commit but only use the files
- that were previously&nbsp;committed.</p>
-
         </section>
       </article>
       <hr><a name="How do I add only a portion of a file?"></a>
@@ -120,6 +104,22 @@ Stage this hunk [y,n,q,a,d,/,j,J,g,e,?]? y
         <section class="content"><pre><code>git add file.js # stage the file
 git commit      # commit the file
 </code></pre>
+        </section>
+      </article>
+      <hr><a name="How do I change my last commit message?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-change-my-last-commit-message.html">How do I change my last commit message?</a></h2>
+        </header>
+        <section class="content"><pre><code>git commit --amend --only
+</code></pre><p>Or, without staged&nbsp;changes:</p>
+<pre><code>git commit --amend
+</code></pre><p><code>--amend</code> without other options combines the currently staged changes with the last commit and then opens an editor to
+ update the commit message. If you have staged changes, they will be&nbsp;added.</p>
+<p> To update the last message even if there are staged changes (<code>git status</code> reports files under <code>Changes to be committed</code>)
+ then you can use the <code>-o</code> (or <code>--only</code>) option to indicate you want to amend the last commit but only use the files
+ that were previously&nbsp;committed.</p>
+
         </section>
       </article>
       <hr><a name="How do I compare branches?"></a>
@@ -243,17 +243,6 @@ git checkout somedir/ # reset all files in somedir/
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I undo git add?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-undo-git-add.html">How do I undo git add?</a></h2>
-        </header>
-        <section class="content"><pre><code>git reset
-</code></pre><p><em>or</em> </p>
-<pre><code>git reset file.txt
-</code></pre>
-        </section>
-      </article>
       <hr><a name="How do I update my repository?"></a>
       <article class="article intro">
         <header>
@@ -264,6 +253,20 @@ git checkout somedir/ # reset all files in somedir/
 <pre><code>git pull --rebase [remote] [branch]
 </code></pre><p>This performs the same as above, but using <code>rebase</code> instead of <code>merge</code>.</p>
 <p>(See also <a href="http://gitfaq.org/articles/what-is-the-difference-between-fetch-and-pull.html">What is the difference between fetch and pull</a> for more&nbsp;details)</p>
+
+        </section>
+      </article>
+      <hr><a name="How do I undo git add?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-undo-git-add.html">How do I undo git add?</a></h2>
+        </header>
+        <section class="content"><pre><code>git reset
+</code></pre><p><em>or</em> </p>
+<pre><code>git reset file.txt
+</code></pre><p><code>git add</code> simply stages changes to be committed. To undo that action, 
+all that’s needed is to <code>git reset</code> the file or list of&nbsp;files.</p>
+<p>To undo a commit, see <a href="http://gitfaq.org/#How do I undo a commit?">How do I undo a&nbsp;commit?</a></p>
 
         </section>
       </article>
@@ -368,17 +371,6 @@ origin    git@github.com:jsoverson/gitfaq.git (push)
 </code></pre>
         </section>
       </article>
-      <hr><a name="What is difference between master &amp; HEAD?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/what-is-the-difference-between-master-and-head.html">What is difference between master &amp; HEAD?</a></h2>
-        </header>
-        <section class="content"><p><code>master</code> is the common name for the default branch. It doesn’t need to exist, but it often&nbsp;does.</p>
-<p><code>HEAD</code> can be thought of as a variable pointing to a specific commit. It can change and isn’t related to a&nbsp;branch.</p>
-<p>Issuing new commits changes <code>HEAD</code>, checking anything out changes <code>HEAD</code>.</p>
-
-        </section>
-      </article>
       <hr><a name="What is the difference between fetch and pull?"></a>
       <article class="article intro">
         <header>
@@ -391,6 +383,17 @@ git merge [remote][/branch]
 <pre><code>git fetch [remote] [branch]
 git rebase [remote][/branch]
 </code></pre>
+        </section>
+      </article>
+      <hr><a name="What is difference between master &amp; HEAD?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/what-is-the-difference-between-master-and-head.html">What is difference between master &amp; HEAD?</a></h2>
+        </header>
+        <section class="content"><p><code>master</code> is the common name for the default branch. It doesn’t need to exist, but it often&nbsp;does.</p>
+<p><code>HEAD</code> can be thought of as a variable pointing to a specific commit. It can change and isn’t related to a&nbsp;branch.</p>
+<p>Issuing new commits changes <code>HEAD</code>, checking anything out changes <code>HEAD</code>.</p>
+
         </section>
       </article>
       <hr>
