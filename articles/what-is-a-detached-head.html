@@ -14,7 +14,12 @@
     <div class="container">
       <h2>What is a &quot;detached head&quot;?</h2>
       <article class="article">
-        <section class="content"><pre><code>master    A-B-C-D-E-F-G
+        <section class="content"><pre><code>You are in &#39;detached HEAD&#39; state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+</code></pre><p>This is not an error message and is nothing to be worried about. This is simply a notice 
+that you are not attached to an actual branch. For example, take the following commits on <code>master</code>:</p>
+<pre><code>master    A-B-C-D-E-F-G
 </code></pre><p>Using the example above where the <code>master</code> branch has commits <code>A-G</code>, if you check out master you will be placed at the ‘tip’
 of master, commit <code>G</code>. If you remain at the tip of a branch, you are considered&nbsp;“attached.”</p>
 <p>If you check out an arbitrary commit, you are no longer necessarily associated with a branch and are considered&nbsp;“detached.”</p>

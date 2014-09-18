@@ -22,9 +22,9 @@ Fork the <a href="https://github.com/jsoverson/gitfaq">repository</a> or <a href
           <ul>
             <li><a href="#How do I create a new git repository?">How do I create a new git repository?</a></li>
             <li><a href="#How do I add only a portion of a file?">How do I add only a portion of a file?</a></li>
+            <li><a href="#How do I change my last commit message?">How do I change my last commit message?</a></li>
             <li><a href="#How do I change the contents of a commit I have not pushed?">How do I change the contents of a commit I have not pushed?</a></li>
             <li><a href="#How do I commit a file?">How do I commit a file?</a></li>
-            <li><a href="#How do I change my last commit message?">How do I change my last commit message?</a></li>
             <li><a href="#How do I compare branches?">How do I compare branches?</a></li>
             <li><a href="#How do I create a branch?">How do I create a branch?</a></li>
             <li><a href="#How do I delete a branch?">How do I delete a branch?</a></li>
@@ -35,9 +35,9 @@ Fork the <a href="https://github.com/jsoverson/gitfaq">repository</a> or <a href
             <li><a href="#How do I completely reset my local repository?">How do I completely reset my local repository?</a></li>
             <li><a href="#How do I revert all uncommitted changes?">How do I revert all uncommitted changes?</a></li>
             <li><a href="#How do I undo a commit?">How do I undo a commit?</a></li>
-            <li><a href="#How do I update my repository?">How do I update my repository?</a></li>
             <li><a href="#How do I undo git add?">How do I undo git add?</a></li>
             <li><a href="#What if I forgot to add a file in my last commit?">What if I forgot to add a file in my last commit?</a></li>
+            <li><a href="#How do I update my repository?">How do I update my repository?</a></li>
             <li><a href="#What is a &quot;detached head&quot;?">What is a &quot;detached head&quot;?</a></li>
             <li><a href="#What is a &quot;remote&quot;?">What is a &quot;remote&quot;?</a></li>
             <li><a href="#What is &quot;origin&quot;?">What is &quot;origin&quot;?</a></li>
@@ -83,6 +83,22 @@ Stage this hunk [y,n,q,a,d,/,j,J,g,e,?]? y
 </code></pre>
         </section>
       </article>
+      <hr><a name="How do I change my last commit message?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-change-my-last-commit-message.html">How do I change my last commit message?</a></h2>
+        </header>
+        <section class="content"><pre><code>git commit --amend --only
+</code></pre><p>Or, without staged&nbsp;changes:</p>
+<pre><code>git commit --amend
+</code></pre><p><code>--amend</code> without other options combines the currently staged changes with the last commit and then opens an editor to
+ update the commit message. If you have staged changes, they will be&nbsp;added.</p>
+<p> To update the last message even if there are staged changes (<code>git status</code> reports files under <code>Changes to be committed</code>)
+ then you can use the <code>-o</code> (or <code>--only</code>) option to indicate you want to amend the last commit but only use the files
+ that were previously&nbsp;committed.</p>
+
+        </section>
+      </article>
       <hr><a name="How do I change the contents of a commit I have not pushed?"></a>
       <article class="article intro">
         <header>
@@ -104,22 +120,6 @@ Stage this hunk [y,n,q,a,d,/,j,J,g,e,?]? y
         <section class="content"><pre><code>git add file.js # stage the file
 git commit      # commit the file
 </code></pre>
-        </section>
-      </article>
-      <hr><a name="How do I change my last commit message?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-change-my-last-commit-message.html">How do I change my last commit message?</a></h2>
-        </header>
-        <section class="content"><pre><code>git commit --amend --only
-</code></pre><p>Or, without staged&nbsp;changes:</p>
-<pre><code>git commit --amend
-</code></pre><p><code>--amend</code> without other options combines the currently staged changes with the last commit and then opens an editor to
- update the commit message. If you have staged changes, they will be&nbsp;added.</p>
-<p> To update the last message even if there are staged changes (<code>git status</code> reports files under <code>Changes to be committed</code>)
- then you can use the <code>-o</code> (or <code>--only</code>) option to indicate you want to amend the last commit but only use the files
- that were previously&nbsp;committed.</p>
-
         </section>
       </article>
       <hr><a name="How do I compare branches?"></a>
@@ -243,19 +243,6 @@ git checkout somedir/ # reset all files in somedir/
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I update my repository?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-update-my-repository.html">How do I update my repository?</a></h2>
-        </header>
-        <section class="content"><pre><code>git pull [remote] [branch]
-</code></pre><p>To update using rebase&nbsp;: </p>
-<pre><code>git pull --rebase [remote] [branch]
-</code></pre><p>This performs the same as above, but using <code>rebase</code> instead of <code>merge</code>.</p>
-<p>(See also <a href="http://gitfaq.org/articles/what-is-the-difference-between-fetch-and-pull.html">What is the difference between fetch and pull</a> for more&nbsp;details)</p>
-
-        </section>
-      </article>
       <hr><a name="How do I undo git add?"></a>
       <article class="article intro">
         <header>
@@ -287,12 +274,30 @@ git commit --amend  # amend the commit done before step 1 with the added file
 </code></pre>
         </section>
       </article>
+      <hr><a name="How do I update my repository?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-update-my-repository.html">How do I update my repository?</a></h2>
+        </header>
+        <section class="content"><pre><code>git pull [remote] [branch]
+</code></pre><p>To update using rebase&nbsp;: </p>
+<pre><code>git pull --rebase [remote] [branch]
+</code></pre><p>This performs the same as above, but using <code>rebase</code> instead of <code>merge</code>.</p>
+<p>(See also <a href="http://gitfaq.org/articles/what-is-the-difference-between-fetch-and-pull.html">What is the difference between fetch and pull</a> for more&nbsp;details)</p>
+
+        </section>
+      </article>
       <hr><a name="What is a &quot;detached head&quot;?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/what-is-a-detached-head.html">What is a &quot;detached head&quot;?</a></h2>
         </header>
-        <section class="content"><pre><code>master    A-B-C-D-E-F-G
+        <section class="content"><pre><code>You are in &#39;detached HEAD&#39; state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+</code></pre><p>This is not an error message and is nothing to be worried about. This is simply a notice 
+that you are not attached to an actual branch. For example, take the following commits on <code>master</code>:</p>
+<pre><code>master    A-B-C-D-E-F-G
 </code></pre><p>Using the example above where the <code>master</code> branch has commits <code>A-G</code>, if you check out master you will be placed at the ‘tip’
 of master, commit <code>G</code>. If you remain at the tip of a branch, you are considered&nbsp;“attached.”</p>
 <p>If you check out an arbitrary commit, you are no longer necessarily associated with a branch and are considered&nbsp;“detached.”</p>
