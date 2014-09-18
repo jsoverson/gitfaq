@@ -4,6 +4,15 @@ template: article.jade
 ---
 
 ```
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+```
+
+This is not an error message and is nothing to be worried about. This is simply a notice 
+that you are not attached to an actual branch. For example, take the following commits on `master`:
+
+```
 master    A-B-C-D-E-F-G
 ```
 
