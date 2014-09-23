@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="shortcut icon" href="/favicon.png">
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/css/main.css">
@@ -21,8 +22,8 @@ Fork the <a href="https://github.com/jsoverson/gitfaq">repository</a> or <a href
         <nav>
           <ul>
             <li><a href="#How do I create a new git repository?">How do I create a new git repository?</a></li>
-            <li><a href="#How do I add only a portion of a file?">How do I add only a portion of a file?</a></li>
             <li><a href="#How do I change my last commit message?">How do I change my last commit message?</a></li>
+            <li><a href="#How do I add only a portion of a file?">How do I add only a portion of a file?</a></li>
             <li><a href="#How do I change the contents of a commit I have not pushed?">How do I change the contents of a commit I have not pushed?</a></li>
             <li><a href="#How do I commit a file?">How do I commit a file?</a></li>
             <li><a href="#How do I compare branches?">How do I compare branches?</a></li>
@@ -36,8 +37,8 @@ Fork the <a href="https://github.com/jsoverson/gitfaq">repository</a> or <a href
             <li><a href="#How do I revert all uncommitted changes?">How do I revert all uncommitted changes?</a></li>
             <li><a href="#How do I undo a commit?">How do I undo a commit?</a></li>
             <li><a href="#How do I undo git add?">How do I undo git add?</a></li>
-            <li><a href="#What if I forgot to add a file in my last commit?">What if I forgot to add a file in my last commit?</a></li>
             <li><a href="#How do I update my repository?">How do I update my repository?</a></li>
+            <li><a href="#What if I forgot to add a file in my last commit?">What if I forgot to add a file in my last commit?</a></li>
             <li><a href="#What is a &quot;detached head&quot;?">What is a &quot;detached head&quot;?</a></li>
             <li><a href="#What is a &quot;remote&quot;?">What is a &quot;remote&quot;?</a></li>
             <li><a href="#What is &quot;origin&quot;?">What is &quot;origin&quot;?</a></li>
@@ -56,6 +57,22 @@ git commit -m ‘initial commit’
 git remote add origin &lt;destination&gt;
 git push -u origin master
 </code></pre>
+        </section>
+      </article>
+      <hr><a name="How do I change my last commit message?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-change-my-last-commit-message.html">How do I change my last commit message?</a></h2>
+        </header>
+        <section class="content"><pre><code>git commit --amend --only
+</code></pre><p>Or, without staged&nbsp;changes:</p>
+<pre><code>git commit --amend
+</code></pre><p><code>--amend</code> without other options combines the currently staged changes with the last commit and then opens an editor to
+ update the commit message. If you have staged changes, they will be&nbsp;added.</p>
+<p> To update the last message even if there are staged changes (<code>git status</code> reports files under <code>Changes to be committed</code>)
+ then you can use the <code>-o</code> (or <code>--only</code>) option to indicate you want to amend the last commit but only use the files
+ that were previously&nbsp;committed.</p>
+
         </section>
       </article>
       <hr><a name="How do I add only a portion of a file?"></a>
@@ -81,22 +98,6 @@ index 7a558a3..e03ce3f 100644
    &quot;repository&quot;: &quot;git://github.com/foo/bar&quot;,
 Stage this hunk [y,n,q,a,d,/,j,J,g,e,?]? y
 </code></pre>
-        </section>
-      </article>
-      <hr><a name="How do I change my last commit message?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-change-my-last-commit-message.html">How do I change my last commit message?</a></h2>
-        </header>
-        <section class="content"><pre><code>git commit --amend --only
-</code></pre><p>Or, without staged&nbsp;changes:</p>
-<pre><code>git commit --amend
-</code></pre><p><code>--amend</code> without other options combines the currently staged changes with the last commit and then opens an editor to
- update the commit message. If you have staged changes, they will be&nbsp;added.</p>
-<p> To update the last message even if there are staged changes (<code>git status</code> reports files under <code>Changes to be committed</code>)
- then you can use the <code>-o</code> (or <code>--only</code>) option to indicate you want to amend the last commit but only use the files
- that were previously&nbsp;committed.</p>
-
         </section>
       </article>
       <hr><a name="How do I change the contents of a commit I have not pushed?"></a>
@@ -257,6 +258,19 @@ all that’s needed is to <code>git reset</code> the file or list of&nbsp;files.
 
         </section>
       </article>
+      <hr><a name="How do I update my repository?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-update-my-repository.html">How do I update my repository?</a></h2>
+        </header>
+        <section class="content"><pre><code>git pull [remote] [branch]
+</code></pre><p>To update using rebase&nbsp;: </p>
+<pre><code>git pull --rebase [remote] [branch]
+</code></pre><p>This performs the same as above, but using <code>rebase</code> instead of <code>merge</code>.</p>
+<p>(See also <a href="http://gitfaq.org/articles/what-is-the-difference-between-fetch-and-pull.html">What is the difference between fetch and pull</a> for more&nbsp;details)</p>
+
+        </section>
+      </article>
       <hr><a name="What if I forgot to add a file in my last commit?"></a>
       <article class="article intro">
         <header>
@@ -272,19 +286,6 @@ git commit --amend  # amend the commit done before step 1 with the added file
 </code></pre><p>If all the edited files need to be added to the last&nbsp;commit:</p>
 <pre><code>git commit --amend --no-edit --all
 </code></pre>
-        </section>
-      </article>
-      <hr><a name="How do I update my repository?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-update-my-repository.html">How do I update my repository?</a></h2>
-        </header>
-        <section class="content"><pre><code>git pull [remote] [branch]
-</code></pre><p>To update using rebase&nbsp;: </p>
-<pre><code>git pull --rebase [remote] [branch]
-</code></pre><p>This performs the same as above, but using <code>rebase</code> instead of <code>merge</code>.</p>
-<p>(See also <a href="http://gitfaq.org/articles/what-is-the-difference-between-fetch-and-pull.html">What is the difference between fetch and pull</a> for more&nbsp;details)</p>
-
         </section>
       </article>
       <hr><a name="What is a &quot;detached head&quot;?"></a>
