@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
     <link rel="shortcut icon" href="/favicon.png">
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/gh-fork-ribbons.css">
+    <meta property="og:title" content="Help without manpages">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://gitfaq.org/">
+    <meta property="og:image" content="http://gitfaq.org/gitfaqorg.png">
+    <meta property="og:site_name" content="Git Faq">
+    <meta property="og:description" content="Straight to the point answers to actual git questions.">
   </head>
   <body></body>
   <div id="wrap">
@@ -14,16 +20,18 @@
     </nav>
     <div class="container">
       <div class="page-header">
-        <h1>GIT FAQ<small> Help without manpages.</small></h1>
-      </div><p>Want to answer or ask a question?
+        <h1>GIT FAQ<small> Help without manpages.</small></h1><p>Want to answer or ask a question?
 Fork the <a href="https://github.com/jsoverson/gitfaq">repository</a> or <a href="https://github.com/jsoverson/gitfaq/issues">open an issue</a>!</p>
-
+<a href="https://twitter.com/share" data-related="jsoverson" data-hashtags="gitfaq" class="twitter-share-button">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fgitfaq.org%2F&amp;amp;width&amp;amp;layout=button_count&amp;amp;action=like&amp;amp;show_faces=false&amp;amp;share=false&amp;amp;height=21&amp;amp;appId=359580757494088" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
+      </div>
       <div>
         <nav>
           <ul>
             <li><a href="#How do I create a new git repository?">How do I create a new git repository?</a></li>
-            <li><a href="#How do I change my last commit message?">How do I change my last commit message?</a></li>
             <li><a href="#How do I add only a portion of a file?">How do I add only a portion of a file?</a></li>
+            <li><a href="#How do I change my last commit message?">How do I change my last commit message?</a></li>
             <li><a href="#How do I change the contents of a commit I have not pushed?">How do I change the contents of a commit I have not pushed?</a></li>
             <li><a href="#How do I commit a file?">How do I commit a file?</a></li>
             <li><a href="#How do I compare branches?">How do I compare branches?</a></li>
@@ -59,22 +67,6 @@ git push -u origin master
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I change my last commit message?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-change-my-last-commit-message.html">How do I change my last commit message?</a></h2>
-        </header>
-        <section class="content"><pre><code>git commit --amend --only
-</code></pre><p>Or, without staged&nbsp;changes:</p>
-<pre><code>git commit --amend
-</code></pre><p><code>--amend</code> without other options combines the currently staged changes with the last commit and then opens an editor to
- update the commit message. If you have staged changes, they will be&nbsp;added.</p>
-<p> To update the last message even if there are staged changes (<code>git status</code> reports files under <code>Changes to be committed</code>)
- then you can use the <code>-o</code> (or <code>--only</code>) option to indicate you want to amend the last commit but only use the files
- that were previously&nbsp;committed.</p>
-
-        </section>
-      </article>
       <hr><a name="How do I add only a portion of a file?"></a>
       <article class="article intro">
         <header>
@@ -98,6 +90,22 @@ index 7a558a3..e03ce3f 100644
    &quot;repository&quot;: &quot;git://github.com/foo/bar&quot;,
 Stage this hunk [y,n,q,a,d,/,j,J,g,e,?]? y
 </code></pre>
+        </section>
+      </article>
+      <hr><a name="How do I change my last commit message?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-change-my-last-commit-message.html">How do I change my last commit message?</a></h2>
+        </header>
+        <section class="content"><pre><code>git commit --amend --only
+</code></pre><p>Or, without staged&nbsp;changes:</p>
+<pre><code>git commit --amend
+</code></pre><p><code>--amend</code> without other options combines the currently staged changes with the last commit and then opens an editor to
+ update the commit message. If you have staged changes, they will be&nbsp;added.</p>
+<p> To update the last message even if there are staged changes (<code>git status</code> reports files under <code>Changes to be committed</code>)
+ then you can use the <code>-o</code> (or <code>--only</code>) option to indicate you want to amend the last commit but only use the files
+ that were previously&nbsp;committed.</p>
+
         </section>
       </article>
       <hr><a name="How do I change the contents of a commit I have not pushed?"></a>
