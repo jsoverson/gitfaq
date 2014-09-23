@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
+    <title>GitFaq.org - git help without manpages.</title>
     <link rel="shortcut icon" href="/favicon.png">
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap-theme.min.css">
@@ -31,8 +32,8 @@ Fork the <a href="https://github.com/jsoverson/gitfaq">repository</a> or <a href
           <ul>
             <li><a href="#How do I create a new git repository?">How do I create a new git repository?</a></li>
             <li><a href="#How do I add only a portion of a file?">How do I add only a portion of a file?</a></li>
-            <li><a href="#How do I change my last commit message?">How do I change my last commit message?</a></li>
             <li><a href="#How do I change the contents of a commit I have not pushed?">How do I change the contents of a commit I have not pushed?</a></li>
+            <li><a href="#How do I change my last commit message?">How do I change my last commit message?</a></li>
             <li><a href="#How do I commit a file?">How do I commit a file?</a></li>
             <li><a href="#How do I compare branches?">How do I compare branches?</a></li>
             <li><a href="#How do I create a branch?">How do I create a branch?</a></li>
@@ -92,6 +93,19 @@ Stage this hunk [y,n,q,a,d,/,j,J,g,e,?]? y
 </code></pre>
         </section>
       </article>
+      <hr><a name="How do I change the contents of a commit I have not pushed?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-change-the-contents-of-a-commit.html">How do I change the contents of a commit I have not pushed?</a></h2>
+        </header>
+        <section class="content"><pre><code>git commit --amend &lt;files&gt;
+</code></pre><p>or</p>
+<pre><code>git commit --amend --all
+</code></pre><p>If the commit message does not need to be changed, add <code>--no-edit</code> eg</p>
+<pre><code>git commit --amend --all --no-edit
+</code></pre>
+        </section>
+      </article>
       <hr><a name="How do I change my last commit message?"></a>
       <article class="article intro">
         <header>
@@ -106,19 +120,6 @@ Stage this hunk [y,n,q,a,d,/,j,J,g,e,?]? y
  then you can use the <code>-o</code> (or <code>--only</code>) option to indicate you want to amend the last commit but only use the files
  that were previously&nbsp;committed.</p>
 
-        </section>
-      </article>
-      <hr><a name="How do I change the contents of a commit I have not pushed?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-change-the-contents-of-a-commit.html">How do I change the contents of a commit I have not pushed?</a></h2>
-        </header>
-        <section class="content"><pre><code>git commit --amend &lt;files&gt;
-</code></pre><p>or</p>
-<pre><code>git commit --amend --all
-</code></pre><p>If the commit message does not need to be changed, add <code>--no-edit</code> eg</p>
-<pre><code>git commit --amend --all --no-edit
-</code></pre>
         </section>
       </article>
       <hr><a name="How do I commit a file?"></a>
