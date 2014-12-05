@@ -15,11 +15,9 @@ Do you want to keep your changes and just undo the actual act of committing?
 git reset HEAD~1
 ```
 
-Either way, if you already pushed the commit you'll need to force push:
+**WARNING**: By undoing a commit this way, you are rewriting history. If you would like to *revert* the last commit, which does not rewrite history (it preserves the original commit, and just adds a commit that undoes that commit), use this:
 
 ```
-git push -f
+git revert HEAD
 ```
-
-**WARNING**: Do not force push if you are not the only person working on that repository! It will mess up other peoples' local repositories.
 
