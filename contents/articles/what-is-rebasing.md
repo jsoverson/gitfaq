@@ -22,4 +22,6 @@ A-B-C-D-E        master
           X-Y-Z  feature
 ```
 
+Warning this changes history, see also []
+
 See also [is rebasing bad?](/articles/is-rebasing-bad.html)
