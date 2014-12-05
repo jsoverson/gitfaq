@@ -19,7 +19,7 @@ replays the rewound commits over it, leaving the timeline looking like this.
 ```
 A-B-C-D-E        master
          \
-          X-Y-Z  feature
+          X'-Y'-Z'  feature
 ```
 
 Warning this changes history, see also []
