@@ -18,6 +18,7 @@ block content
 
   div
     nav
+      a(name='toc')
       ul
         each article in articles
           - console.log(article.title)
@@ -25,6 +26,7 @@ block content
               a(href="##{article.title}")= article.title
 
   each article in articles
+    a(href='/#toc' title="Go back to table of contents").contents Table of Contents
     a(name=article.title)
     article.article.intro
       header
