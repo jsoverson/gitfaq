@@ -13,6 +13,13 @@ A-B-C-D-E    master
     X-Y-Z    feature
 ```
 
+You can rebase with the `rebase` command. For example, to rebase the `feature` branch on `master`:
+
+```
+$ git checkout feature
+$ git rebase master
+```
+
 Rebasing essentially rewinds the commits on a branch, brings the branch up to date with the rebase target, and then
 replays the rewound commits over it, leaving the timeline looking like this.
 
@@ -22,6 +29,4 @@ A-B-C-D-E        master
           X'-Y'-Z'  feature
 ```
 
-Warning this changes history, see also []
-
-See also [is rebasing bad?](/articles/is-rebasing-bad.html)
+Warning this changes history, see also [What does changing history mean?](/articles/what-does-changing-history-mean.html)

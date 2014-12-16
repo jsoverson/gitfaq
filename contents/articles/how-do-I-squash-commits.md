@@ -6,10 +6,10 @@ template: article.jade
 There are multiple ways of squashing commits but the most recommended and straight forward is to use an interactive rebase, eg
 
 ```
-git rebase -i HEAD~3 # interactively rebase from 3 commits ago
+git rebase -i HEAD~4 # interactively rebase from 3 commits ago
 ```
 
-This command will bring up your editor with some helpful documentation and list of those commits and messages.
+This command will bring up your editor with some helpful documentation and list of those commits and messages. The commits are listed in order with the oldest commit at the top and the latest commit at the bottom.
 
 ```
 pick f53d15b fixed edge case with IE5
