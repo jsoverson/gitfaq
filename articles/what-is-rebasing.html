@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <title>GitFaq.org - git help without manpages.</title>
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/gh-fork-ribbons.css">
+    <meta property="og:title" content="Help without manpages">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://gitfaq.org/">
+    <meta property="og:image" content="http://gitfaq.org/gitfaqorg.png">
+    <meta property="og:site_name" content="Git Faq">
+    <meta property="og:description" content="Straight to the point answers to actual git questions.">
+  </head>
+  <body></body>
+  <div id="wrap">
+    <nav role="navigation" class="navbar navbar-default">
+      <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - What is rebasing?</a></div>
+    </nav>
+    <div class="container">
+      <h2>What is rebasing?</h2>
+      <article class="article">
+        <section class="content"><p>Rebasing is establishing a new base for a series of&nbsp;commits.</p>
+<p>In the example below, the branch <code>feature</code> deviated at commit <code>B</code>, while the <code>master</code> branch moved along in&nbsp;parallel.</p>
+<pre><code>A-B-C-D-E    master
+   \
+    X-Y-Z    feature
+</code></pre><p>You can rebase with the <code>rebase</code> command. For example, to rebase the <code>feature</code> branch on <code>master</code>:</p>
+<pre><code>$ git checkout feature
+$ git rebase master
+</code></pre><p>Rebasing essentially rewinds the commits on a branch, brings the branch up to date with the rebase target, and then
+replays the rewound commits over it, leaving the timeline looking like&nbsp;this.</p>
+<pre><code>A-B-C-D-E        master
+         \
+          X&#39;-Y&#39;-Z&#39;  feature
+</code></pre><p>Warning this changes history, see also <a href="/articles/what-does-changing-history-mean.html">What does changing history&nbsp;mean?</a></p>
+</section>
+      </article>
+    </div>
+  </div>
+  <div class="github-fork-ribbon-wrapper right">
+    <div class="github-fork-ribbon"><a href="https://github.com/jsoverson/gitfaq">Fork me on GitHub</a></div>
+  </div>
+  <div id="footer">
+    <div class="container"></div>
+  </div>
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-53866202-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</html>
