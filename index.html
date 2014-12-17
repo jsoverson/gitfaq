@@ -28,39 +28,39 @@ Fork the <a href="https://github.com/jsoverson/gitfaq">repository</a> or <a href
         <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fgitfaq.org%2F&amp;amp;width&amp;amp;layout=button_count&amp;amp;action=like&amp;amp;show_faces=false&amp;amp;share=false&amp;amp;height=21&amp;amp;appId=359580757494088" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
       </div>
       <div>
-        <nav>
+        <nav><a name="toc"></a>
           <ul>
             <li><a href="#How do I squash commits?">How do I squash commits?</a></li>
-            <li><a href="#How do I add only a portion of a file?">How do I add only a portion of a file?</a></li>
             <li><a href="#How do I create a new git repository?">How do I create a new git repository?</a></li>
+            <li><a href="#How do I add only a portion of a file?">How do I add only a portion of a file?</a></li>
             <li><a href="#How do I change my last commit message?">How do I change my last commit message?</a></li>
-            <li><a href="#How do I change the contents of a commit I have not pushed?">How do I change the contents of a commit I have not pushed?</a></li>
             <li><a href="#How do I commit a file?">How do I commit a file?</a></li>
             <li><a href="#How do I compare branches?">How do I compare branches?</a></li>
+            <li><a href="#How do I change the contents of a commit I have not pushed?">How do I change the contents of a commit I have not pushed?</a></li>
             <li><a href="#How do I create a branch?">How do I create a branch?</a></li>
-            <li><a href="#How do I ignore a file pattern?">How do I ignore a file pattern?</a></li>
-            <li><a href="#How do I push my changes?">How do I push my changes?</a></li>
             <li><a href="#How do I delete a branch?">How do I delete a branch?</a></li>
             <li><a href="#How do I get a list of files that have changed since a commit?">How do I get a list of files that have changed since a commit?</a></li>
+            <li><a href="#How do I ignore a file pattern?">How do I ignore a file pattern?</a></li>
+            <li><a href="#How do I push my changes?">How do I push my changes?</a></li>
+            <li><a href="#How do I completely reset my local repository?">How do I completely reset my local repository?</a></li>
             <li><a href="#How do I remove all untracked files?">How do I remove all untracked files?</a></li>
             <li><a href="#How do I revert all uncommitted changes?">How do I revert all uncommitted changes?</a></li>
-            <li><a href="#How do I completely reset my local repository?">How do I completely reset my local repository?</a></li>
-            <li><a href="#What does &quot;Changing History&quot; mean?">What does &quot;Changing History&quot; mean?</a></li>
-            <li><a href="#How do I undo git add?">How do I undo git add?</a></li>
             <li><a href="#How do I undo a commit?">How do I undo a commit?</a></li>
-            <li><a href="#What is local history/shared history?">What is local history/shared history?</a></li>
             <li><a href="#How do I update my repository?">How do I update my repository?</a></li>
+            <li><a href="#How do I undo git add?">How do I undo git add?</a></li>
+            <li><a href="#What does &quot;Changing History&quot; mean?">What does &quot;Changing History&quot; mean?</a></li>
+            <li><a href="#What if I forgot to add a file in my last commit?">What if I forgot to add a file in my last commit?</a></li>
             <li><a href="#What is a &quot;detached head&quot;?">What is a &quot;detached head&quot;?</a></li>
+            <li><a href="#What is a &quot;remote&quot;?">What is a &quot;remote&quot;?</a></li>
+            <li><a href="#What is local history/shared history?">What is local history/shared history?</a></li>
+            <li><a href="#What is &quot;origin&quot;?">What is &quot;origin&quot;?</a></li>
             <li><a href="#What is rebasing?">What is rebasing?</a></li>
             <li><a href="#What is squashing?">What is squashing?</a></li>
-            <li><a href="#What if I forgot to add a file in my last commit?">What if I forgot to add a file in my last commit?</a></li>
-            <li><a href="#What is a &quot;remote&quot;?">What is a &quot;remote&quot;?</a></li>
             <li><a href="#What is difference between master &amp; HEAD?">What is difference between master &amp; HEAD?</a></li>
-            <li><a href="#What is &quot;origin&quot;?">What is &quot;origin&quot;?</a></li>
             <li><a href="#What is the difference between fetch and pull?">What is the difference between fetch and pull?</a></li>
           </ul>
         </nav>
-      </div><a name="How do I squash commits?"></a>
+      </div><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I squash commits?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/how-do-I-squash-commits.html">How do I squash commits?</a></h2>
@@ -100,7 +100,20 @@ will then pop up again allowing you to change the commit message for the resulti
 
         </section>
       </article>
-      <hr><a name="How do I add only a portion of a file?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I create a new git repository?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-I-create-a-new-git-repository.html">How do I create a new git repository?</a></h2>
+        </header>
+        <section class="content"><pre><code>git init
+git add .
+git commit -m ‘initial commit’
+git remote add origin &lt;destination&gt;
+git push -u origin master
+</code></pre>
+        </section>
+      </article>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I add only a portion of a file?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/how-do-i-add-a-portion-of-a-file.html">How do I add only a portion of a file?</a></h2>
@@ -125,20 +138,7 @@ Stage this hunk [y,n,q,a,d,/,j,J,g,e,?]? y
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I create a new git repository?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-I-create-a-new-git-repository.html">How do I create a new git repository?</a></h2>
-        </header>
-        <section class="content"><pre><code>git init
-git add .
-git commit -m ‘initial commit’
-git remote add origin &lt;destination&gt;
-git push -u origin master
-</code></pre>
-        </section>
-      </article>
-      <hr><a name="How do I change my last commit message?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I change my last commit message?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/how-do-i-change-my-last-commit-message.html">How do I change my last commit message?</a></h2>
@@ -154,20 +154,7 @@ git push -u origin master
 
         </section>
       </article>
-      <hr><a name="How do I change the contents of a commit I have not pushed?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-change-the-contents-of-a-commit.html">How do I change the contents of a commit I have not pushed?</a></h2>
-        </header>
-        <section class="content"><pre><code>git commit --amend &lt;files&gt;
-</code></pre><p>or</p>
-<pre><code>git commit --amend --all
-</code></pre><p>If the commit message does not need to be changed, add <code>--no-edit</code> eg</p>
-<pre><code>git commit --amend --all --no-edit
-</code></pre>
-        </section>
-      </article>
-      <hr><a name="How do I commit a file?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I commit a file?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/how-do-i-commit-a-file.html">How do I commit a file?</a></h2>
@@ -177,7 +164,7 @@ git commit      # commit the file
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I compare branches?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I compare branches?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/how-do-i-compare-branches.html">How do I compare branches?</a></h2>
@@ -191,7 +178,20 @@ git commit      # commit the file
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I create a branch?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I change the contents of a commit I have not pushed?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-change-the-contents-of-a-commit.html">How do I change the contents of a commit I have not pushed?</a></h2>
+        </header>
+        <section class="content"><pre><code>git commit --amend &lt;files&gt;
+</code></pre><p>or</p>
+<pre><code>git commit --amend --all
+</code></pre><p>If the commit message does not need to be changed, add <code>--no-edit</code> eg</p>
+<pre><code>git commit --amend --all --no-edit
+</code></pre>
+        </section>
+      </article>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I create a branch?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/how-do-i-create-a-branch.html">How do I create a branch?</a></h2>
@@ -203,29 +203,7 @@ git checkout &lt;branch&gt;    # actually moves to the branch
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I ignore a file pattern?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-ignore-a-file-pattern.html">How do I ignore a file pattern?</a></h2>
-        </header>
-        <section class="content"><pre><code>git ignore &#39;*.swp&#39;
-</code></pre><p>If you haven’t ignored anything yet, this creates a <code>.gitignore</code> file which you probably want to add and&nbsp;track.</p>
-<pre><code>git add .gitignore
-git commit -m &#39;added .gitignore&#39;
-</code></pre>
-        </section>
-      </article>
-      <hr><a name="How do I push my changes?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-push-my-changes.html">How do I push my changes?</a></h2>
-        </header>
-        <section class="content"><pre><code>git push
-git push origin branch-name
-</code></pre>
-        </section>
-      </article>
-      <hr><a name="How do I delete a branch?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I delete a branch?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/how-do-i-delete-a-branch.html">How do I delete a branch?</a></h2>
@@ -244,7 +222,7 @@ not the branch <code>feature</code> on remote <code>origin</code>. Pulling/fetch
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I get a list of files that have changed since a commit?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I get a list of files that have changed since a commit?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/how-do-i-get-a-list-of-files-changed.html">How do I get a list of files that have changed since a commit?</a></h2>
@@ -254,7 +232,40 @@ not the branch <code>feature</code> on remote <code>origin</code>. Pulling/fetch
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I remove all untracked files?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I ignore a file pattern?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-ignore-a-file-pattern.html">How do I ignore a file pattern?</a></h2>
+        </header>
+        <section class="content"><pre><code>git ignore &#39;*.swp&#39;
+</code></pre><p>If you haven’t ignored anything yet, this creates a <code>.gitignore</code> file which you probably want to add and&nbsp;track.</p>
+<pre><code>git add .gitignore
+git commit -m &#39;added .gitignore&#39;
+</code></pre>
+        </section>
+      </article>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I push my changes?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-push-my-changes.html">How do I push my changes?</a></h2>
+        </header>
+        <section class="content"><pre><code>git push
+git push origin branch-name
+</code></pre>
+        </section>
+      </article>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I completely reset my local repository?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-reset-my-local-repository.html">How do I completely reset my local repository?</a></h2>
+        </header>
+        <section class="content"><pre><code>git reset
+git checkout .
+git clean -fdx
+</code></pre>
+        </section>
+      </article>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I remove all untracked files?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/how-do-i-remove-all-untracked-files.html">How do I remove all untracked files?</a></h2>
@@ -263,7 +274,7 @@ not the branch <code>feature</code> on remote <code>origin</code>. Pulling/fetch
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I revert all uncommitted changes?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I revert all uncommitted changes?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/how-do-i-revert-all-uncommitted-changes.html">How do I revert all uncommitted changes?</a></h2>
@@ -275,18 +286,46 @@ git checkout somedir/ # reset all files in somedir/
 </code></pre>
         </section>
       </article>
-      <hr><a name="How do I completely reset my local repository?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I undo a commit?"></a>
       <article class="article intro">
         <header>
-          <h2><a href="/articles/how-do-i-reset-my-local-repository.html">How do I completely reset my local repository?</a></h2>
+          <h2><a href="/articles/how-do-i-undo-a-commit.html">How do I undo a commit?</a></h2>
         </header>
-        <section class="content"><pre><code>git reset
-git checkout .
-git clean -fdx
+        <section class="content"><p>Do you want to undo the commit and never see the changes ever&nbsp;again?</p>
+<pre><code>git reset --hard HEAD~1
+</code></pre><p>Do you want to keep your changes and just undo the actual act of&nbsp;committing?</p>
+<pre><code>git reset HEAD~1
 </code></pre>
         </section>
       </article>
-      <hr><a name="What does &quot;Changing History&quot; mean?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I update my repository?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-update-my-repository.html">How do I update my repository?</a></h2>
+        </header>
+        <section class="content"><pre><code>git pull [remote] [branch]
+</code></pre><p>To update using rebase&nbsp;: </p>
+<pre><code>git pull --rebase [remote] [branch]
+</code></pre><p>This performs the same as above, but using <code>rebase</code> instead of <code>merge</code>.</p>
+<p>(See also <a href="http://gitfaq.org/articles/what-is-the-difference-between-fetch-and-pull.html">What is the difference between fetch and pull</a> for more&nbsp;details)</p>
+
+        </section>
+      </article>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="How do I undo git add?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/how-do-i-undo-git-add.html">How do I undo git add?</a></h2>
+        </header>
+        <section class="content"><pre><code>git reset
+</code></pre><p><em>or</em> </p>
+<pre><code>git reset file.txt
+</code></pre><p><code>git add</code> simply stages changes to be committed. To undo that action, 
+all that’s needed is to <code>git reset</code> the file or list of&nbsp;files.</p>
+<p>To undo a commit, see <a href="http://gitfaq.org/#How do I undo a commit?">How do I undo a&nbsp;commit?</a></p>
+
+        </section>
+      </article>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="What does &quot;Changing History&quot; mean?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/what-does-changing-history-mean.html">What does &quot;Changing History&quot; mean?</a></h2>
@@ -311,70 +350,24 @@ make sure important changes are pushed before a history&nbsp;modification.</p>
 
         </section>
       </article>
-      <hr><a name="How do I undo git add?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="What if I forgot to add a file in my last commit?"></a>
       <article class="article intro">
         <header>
-          <h2><a href="/articles/how-do-i-undo-git-add.html">How do I undo git add?</a></h2>
+          <h2><a href="/articles/what-if-i-forgot-to-add-a-file.html">What if I forgot to add a file in my last commit?</a></h2>
         </header>
-        <section class="content"><pre><code>git reset
-</code></pre><p><em>or</em> </p>
-<pre><code>git reset file.txt
-</code></pre><p><code>git add</code> simply stages changes to be committed. To undo that action, 
-all that’s needed is to <code>git reset</code> the file or list of&nbsp;files.</p>
-<p>To undo a commit, see <a href="http://gitfaq.org/#How do I undo a commit?">How do I undo a&nbsp;commit?</a></p>
-
-        </section>
-      </article>
-      <hr><a name="How do I undo a commit?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-undo-a-commit.html">How do I undo a commit?</a></h2>
-        </header>
-        <section class="content"><p>Do you want to undo the commit and never see the changes ever&nbsp;again?</p>
-<pre><code>git reset --hard HEAD~1
-</code></pre><p>Do you want to keep your changes and just undo the actual act of&nbsp;committing?</p>
-<pre><code>git reset HEAD~1
+        <section class="content"><pre><code>git add file.js     # the file that needed to be included
+git commit --amend  # amend the commit done before step 1 with the added file
+</code></pre><p>This will add the file to the previous commit and replace it with a new&nbsp;commit.</p>
+<p>This can be simplified into one&nbsp;command:</p>
+<pre><code>git commit --amend file.js
+</code></pre><p>If the commit message doesn’t need to be&nbsp;updated:</p>
+<pre><code>git commit --amend --no-edit file.js
+</code></pre><p>If all the edited files need to be added to the last&nbsp;commit:</p>
+<pre><code>git commit --amend --no-edit --all
 </code></pre>
         </section>
       </article>
-      <hr><a name="What is local history/shared history?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/what-is-local-shared-history.html">What is local history/shared history?</a></h2>
-        </header>
-        <section class="content"><p>“Remote history” or “Shared History” is used to refer to history that is shared with others. “Local history” is used to
-refer to changes that have never been&nbsp;shared.</p>
-<p>For the following commit history, “Shared History”and “Local History” boundaries are&nbsp;shown,</p>
-<pre><code>A-B-C-D-E                origin/master
-
-A-B-C-D-E-F-G-H-I        origin/feature1
-
-A-B-C-D-E-F-G-H-I-J-K-J  feature1 (local)
-|       | |     | |   |
-|       | |     | +-+-+
-|       | |     |   |
-|       | +--+--+   Local History
-|       |    |
-+---+---+  Shared History (branch)
-    |
-Shared History (master)
-</code></pre>
-        </section>
-      </article>
-      <hr><a name="How do I update my repository?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/how-do-i-update-my-repository.html">How do I update my repository?</a></h2>
-        </header>
-        <section class="content"><pre><code>git pull [remote] [branch]
-</code></pre><p>To update using rebase&nbsp;: </p>
-<pre><code>git pull --rebase [remote] [branch]
-</code></pre><p>This performs the same as above, but using <code>rebase</code> instead of <code>merge</code>.</p>
-<p>(See also <a href="http://gitfaq.org/articles/what-is-the-difference-between-fetch-and-pull.html">What is the difference between fetch and pull</a> for more&nbsp;details)</p>
-
-        </section>
-      </article>
-      <hr><a name="What is a &quot;detached head&quot;?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="What is a &quot;detached head&quot;?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/what-is-a-detached-head.html">What is a &quot;detached head&quot;?</a></h2>
@@ -431,7 +424,63 @@ nothing to commit, working directory clean
 </code></pre>
         </section>
       </article>
-      <hr><a name="What is rebasing?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="What is a &quot;remote&quot;?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/what-is-a-remote.html">What is a &quot;remote&quot;?</a></h2>
+        </header>
+        <section class="content"><p>The term “remote” is any remote destination that you may want to push or pull from. This is often a git
+repository hosted on a git server like those run by&nbsp;Github.</p>
+<p>You can have multiple&nbsp;remotes.</p>
+<p>You can view the remotes you have set with <code>git remote</code> and <code>git remote -v</code> gives you more important&nbsp;information.</p>
+<pre><code>$ git remote -v
+origin    git@github.com:jsoverson/gitfaq.git (fetch)
+origin    git@github.com:jsoverson/gitfaq.git (push)
+</code></pre><p>You can add new remotes via <code>git remote add &lt;destination&gt;</code> eg</p>
+<pre><code>$ git remote add michaelficarra git@github.com:michaelficarra/gitfaq.git
+</code></pre><p>You can change the destination via <code>git remote set-url &lt;remote&gt; &lt;destination&gt;</code></p>
+<pre><code>$ git remote set-url origin git@github.com:michaelficarra/gitfaq.git
+</code></pre>
+        </section>
+      </article>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="What is local history/shared history?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/what-is-local-shared-history.html">What is local history/shared history?</a></h2>
+        </header>
+        <section class="content"><p>“Remote history” or “Shared History” is used to refer to history that is shared with others. “Local history” is used to
+refer to changes that have never been&nbsp;shared.</p>
+<p>For the following commit history, “Shared History”and “Local History” boundaries are&nbsp;shown,</p>
+<pre><code>A-B-C-D-E                origin/master
+
+A-B-C-D-E-F-G-H-I        origin/feature1
+
+A-B-C-D-E-F-G-H-I-J-K-J  feature1 (local)
+|       | |     | |   |
+|       | |     | +-+-+
+|       | |     |   |
+|       | +--+--+   Local History
+|       |    |
++---+---+  Shared History (branch)
+    |
+Shared History (master)
+</code></pre>
+        </section>
+      </article>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="What is &quot;origin&quot;?"></a>
+      <article class="article intro">
+        <header>
+          <h2><a href="/articles/what-is-origin.html">What is &quot;origin&quot;?</a></h2>
+        </header>
+        <section class="content"><p>Origin is the default name for the remote server. “Remotes” can be named anything, you can see the names of all
+ your remotes with the command <code>remote</code></p>
+<pre><code>$ git remote -v
+origin    git@github.com:jsoverson/gitfaq.git (fetch)
+origin    git@github.com:jsoverson/gitfaq.git (push)
+</code></pre>
+        </section>
+      </article>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="What is rebasing?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/what-is-rebasing.html">What is rebasing?</a></h2>
@@ -453,7 +502,7 @@ replays the rewound commits over it, leaving the timeline looking like&nbsp;this
 
         </section>
       </article>
-      <hr><a name="What is squashing?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="What is squashing?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/what-is-squashing.html">What is squashing?</a></h2>
@@ -474,43 +523,7 @@ more valuable as a record of important changes. The following commits could then
 
         </section>
       </article>
-      <hr><a name="What if I forgot to add a file in my last commit?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/what-if-i-forgot-to-add-a-file.html">What if I forgot to add a file in my last commit?</a></h2>
-        </header>
-        <section class="content"><pre><code>git add file.js     # the file that needed to be included
-git commit --amend  # amend the commit done before step 1 with the added file
-</code></pre><p>This will add the file to the previous commit and replace it with a new&nbsp;commit.</p>
-<p>This can be simplified into one&nbsp;command:</p>
-<pre><code>git commit --amend file.js
-</code></pre><p>If the commit message doesn’t need to be&nbsp;updated:</p>
-<pre><code>git commit --amend --no-edit file.js
-</code></pre><p>If all the edited files need to be added to the last&nbsp;commit:</p>
-<pre><code>git commit --amend --no-edit --all
-</code></pre>
-        </section>
-      </article>
-      <hr><a name="What is a &quot;remote&quot;?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/what-is-a-remote.html">What is a &quot;remote&quot;?</a></h2>
-        </header>
-        <section class="content"><p>The term “remote” is any remote destination that you may want to push or pull from. This is often a git
-repository hosted on a git server like those run by&nbsp;Github.</p>
-<p>You can have multiple&nbsp;remotes.</p>
-<p>You can view the remotes you have set with <code>git remote</code> and <code>git remote -v</code> gives you more important&nbsp;information.</p>
-<pre><code>$ git remote -v
-origin    git@github.com:jsoverson/gitfaq.git (fetch)
-origin    git@github.com:jsoverson/gitfaq.git (push)
-</code></pre><p>You can add new remotes via <code>git remote add &lt;destination&gt;</code> eg</p>
-<pre><code>$ git remote add michaelficarra git@github.com:michaelficarra/gitfaq.git
-</code></pre><p>You can change the destination via <code>git remote set-url &lt;remote&gt; &lt;destination&gt;</code></p>
-<pre><code>$ git remote set-url origin git@github.com:michaelficarra/gitfaq.git
-</code></pre>
-        </section>
-      </article>
-      <hr><a name="What is difference between master &amp; HEAD?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="What is difference between master &amp; HEAD?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/what-is-the-difference-between-master-and-head.html">What is difference between master &amp; HEAD?</a></h2>
@@ -521,20 +534,7 @@ origin    git@github.com:jsoverson/gitfaq.git (push)
 
         </section>
       </article>
-      <hr><a name="What is &quot;origin&quot;?"></a>
-      <article class="article intro">
-        <header>
-          <h2><a href="/articles/what-is-origin.html">What is &quot;origin&quot;?</a></h2>
-        </header>
-        <section class="content"><p>Origin is the default name for the remote server. “Remotes” can be named anything, you can see the names of all
- your remotes with the command <code>remote</code></p>
-<pre><code>$ git remote -v
-origin    git@github.com:jsoverson/gitfaq.git (fetch)
-origin    git@github.com:jsoverson/gitfaq.git (push)
-</code></pre>
-        </section>
-      </article>
-      <hr><a name="What is the difference between fetch and pull?"></a>
+      <hr><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a><a name="What is the difference between fetch and pull?"></a>
       <article class="article intro">
         <header>
           <h2><a href="/articles/what-is-the-difference-between-fetch-and-pull.html">What is the difference between fetch and pull?</a></h2>
