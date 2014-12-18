@@ -14,15 +14,15 @@
     <meta property="og:site_name" content="Git Faq">
     <meta property="og:description" content="Straight to the point answers to actual git questions.">
   </head>
-  <body></body>
-  <div id="wrap">
-    <nav role="navigation" class="navbar navbar-default">
-      <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - What if I forgot to add a file in my last commit?</a></div>
-    </nav>
-    <div class="container"><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a>
-      <h2>What if I forgot to add a file in my last commit?</h2>
-      <article class="article">
-        <section class="content"><pre><code>git add file.js     # the file that needed to be included
+  <body>
+    <div id="wrap">
+      <nav role="navigation" class="navbar navbar-default">
+        <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - What if I forgot to add a file in my last commit?</a></div>
+      </nav>
+      <div class="container"><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a>
+        <h2>What if I forgot to add a file in my last commit?</h2>
+        <article class="article">
+          <section class="content"><pre><code>git add file.js     # the file that needed to be included
 git commit --amend  # amend the commit done before step 1 with the added file
 </code></pre><p>This will add the file to the previous commit and replace it with a new&nbsp;commit.</p>
 <p>This can be simplified into one&nbsp;command:</p>
@@ -32,23 +32,24 @@ git commit --amend  # amend the commit done before step 1 with the added file
 </code></pre><p>If all the edited files need to be added to the last&nbsp;commit:</p>
 <pre><code>git commit --amend --no-edit --all
 </code></pre></section>
-      </article>
+        </article>
+      </div>
     </div>
-  </div>
-  <div class="github-fork-ribbon-wrapper right">
-    <div class="github-fork-ribbon"><a href="https://github.com/jsoverson/gitfaq">Fork me on GitHub</a></div>
-  </div>
-  <div id="footer">
-    <div class="container"></div>
-  </div>
-  <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-53866202-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+    <div class="github-fork-ribbon-wrapper right">
+      <div class="github-fork-ribbon"><a href="https://github.com/jsoverson/gitfaq">Fork me on GitHub</a></div>
+    </div>
+    <div id="footer">
+      <div class="container"></div>
+    </div>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-53866202-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>

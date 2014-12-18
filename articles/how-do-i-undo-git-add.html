@@ -14,38 +14,39 @@
     <meta property="og:site_name" content="Git Faq">
     <meta property="og:description" content="Straight to the point answers to actual git questions.">
   </head>
-  <body></body>
-  <div id="wrap">
-    <nav role="navigation" class="navbar navbar-default">
-      <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - How do I undo git add?</a></div>
-    </nav>
-    <div class="container"><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a>
-      <h2>How do I undo git add?</h2>
-      <article class="article">
-        <section class="content"><pre><code>git reset
+  <body>
+    <div id="wrap">
+      <nav role="navigation" class="navbar navbar-default">
+        <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - How do I undo git add?</a></div>
+      </nav>
+      <div class="container"><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a>
+        <h2>How do I undo git add?</h2>
+        <article class="article">
+          <section class="content"><pre><code>git reset
 </code></pre><p><em>or</em> </p>
 <pre><code>git reset file.txt
 </code></pre><p><code>git add</code> simply stages changes to be committed. To undo that action, 
 all that’s needed is to <code>git reset</code> the file or list of&nbsp;files.</p>
 <p>To undo a commit, see <a href="http://gitfaq.org/#How do I undo a commit?">How do I undo a&nbsp;commit?</a></p>
 </section>
-      </article>
+        </article>
+      </div>
     </div>
-  </div>
-  <div class="github-fork-ribbon-wrapper right">
-    <div class="github-fork-ribbon"><a href="https://github.com/jsoverson/gitfaq">Fork me on GitHub</a></div>
-  </div>
-  <div id="footer">
-    <div class="container"></div>
-  </div>
-  <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-53866202-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+    <div class="github-fork-ribbon-wrapper right">
+      <div class="github-fork-ribbon"><a href="https://github.com/jsoverson/gitfaq">Fork me on GitHub</a></div>
+    </div>
+    <div id="footer">
+      <div class="container"></div>
+    </div>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-53866202-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>

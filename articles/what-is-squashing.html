@@ -14,15 +14,15 @@
     <meta property="og:site_name" content="Git Faq">
     <meta property="og:description" content="Straight to the point answers to actual git questions.">
   </head>
-  <body></body>
-  <div id="wrap">
-    <nav role="navigation" class="navbar navbar-default">
-      <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - What is squashing?</a></div>
-    </nav>
-    <div class="container"><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a>
-      <h2>What is squashing?</h2>
-      <article class="article">
-        <section class="content"><p>Squashing is the act of turning multiple git commits into fewer. There are many reasons you might want to do this but the most straightforward is to simply keep the commit history cleaner and filled with high value&nbsp;changes.</p>
+  <body>
+    <div id="wrap">
+      <nav role="navigation" class="navbar navbar-default">
+        <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - What is squashing?</a></div>
+      </nav>
+      <div class="container"><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a>
+        <h2>What is squashing?</h2>
+        <article class="article">
+          <section class="content"><p>Squashing is the act of turning multiple git commits into fewer. There are many reasons you might want to do this but the most straightforward is to simply keep the commit history cleaner and filled with high value&nbsp;changes.</p>
 <p>Consider the following set of&nbsp;commits</p>
 <pre><code>f53d15b fixed edge case with IE5
 930c0e5 increased code coverage
@@ -36,23 +36,24 @@ more valuable as a record of important changes. The following commits could then
 <pre><code>a3545a5 added feature Foo
 </code></pre><p>See also <a href="/articles/how-do-I-squash-commits.html">how do I squash&nbsp;commits?</a></p>
 </section>
-      </article>
+        </article>
+      </div>
     </div>
-  </div>
-  <div class="github-fork-ribbon-wrapper right">
-    <div class="github-fork-ribbon"><a href="https://github.com/jsoverson/gitfaq">Fork me on GitHub</a></div>
-  </div>
-  <div id="footer">
-    <div class="container"></div>
-  </div>
-  <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-53866202-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+    <div class="github-fork-ribbon-wrapper right">
+      <div class="github-fork-ribbon"><a href="https://github.com/jsoverson/gitfaq">Fork me on GitHub</a></div>
+    </div>
+    <div id="footer">
+      <div class="container"></div>
+    </div>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-53866202-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>

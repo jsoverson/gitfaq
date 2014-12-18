@@ -14,15 +14,15 @@
     <meta property="og:site_name" content="Git Faq">
     <meta property="og:description" content="Straight to the point answers to actual git questions.">
   </head>
-  <body></body>
-  <div id="wrap">
-    <nav role="navigation" class="navbar navbar-default">
-      <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - How do I squash commits?</a></div>
-    </nav>
-    <div class="container"><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a>
-      <h2>How do I squash commits?</h2>
-      <article class="article">
-        <section class="content"><p>There are multiple ways of squashing commits but the most recommended and straight forward is to use an interactive rebase,&nbsp;eg</p>
+  <body>
+    <div id="wrap">
+      <nav role="navigation" class="navbar navbar-default">
+        <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - How do I squash commits?</a></div>
+      </nav>
+      <div class="container"><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a>
+        <h2>How do I squash commits?</h2>
+        <article class="article">
+          <section class="content"><p>There are multiple ways of squashing commits but the most recommended and straight forward is to use an interactive rebase,&nbsp;eg</p>
 <pre><code>git rebase -i HEAD~4 # interactively rebase from 3 commits ago
 </code></pre><p>This command will bring up your editor with some helpful documentation and list of those commits and messages. The commits are listed in order with the oldest commit at the top and the latest commit at the&nbsp;bottom.</p>
 <pre><code>pick f53d15b fixed edge case with IE5
@@ -55,23 +55,24 @@ squash fb57c85 added feature Foo
 </code></pre><p>When the file is saved and the editor is quit, git will automatically squash those 4 commits into one. Your editor
 will then pop up again allowing you to change the commit message for the resulting&nbsp;commit(s).</p>
 </section>
-      </article>
+        </article>
+      </div>
     </div>
-  </div>
-  <div class="github-fork-ribbon-wrapper right">
-    <div class="github-fork-ribbon"><a href="https://github.com/jsoverson/gitfaq">Fork me on GitHub</a></div>
-  </div>
-  <div id="footer">
-    <div class="container"></div>
-  </div>
-  <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-53866202-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+    <div class="github-fork-ribbon-wrapper right">
+      <div class="github-fork-ribbon"><a href="https://github.com/jsoverson/gitfaq">Fork me on GitHub</a></div>
+    </div>
+    <div id="footer">
+      <div class="container"></div>
+    </div>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-53866202-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>

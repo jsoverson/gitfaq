@@ -14,15 +14,15 @@
     <meta property="og:site_name" content="Git Faq">
     <meta property="og:description" content="Straight to the point answers to actual git questions.">
   </head>
-  <body></body>
-  <div id="wrap">
-    <nav role="navigation" class="navbar navbar-default">
-      <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - What does &quot;Changing History&quot; mean?</a></div>
-    </nav>
-    <div class="container"><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a>
-      <h2>What does &quot;Changing History&quot; mean?</h2>
-      <article class="article">
-        <section class="content"><p>In git, each commit is tagged with a unique <span class="caps">SHA</span>-1 hash. These are critical when resolving differences between sources that
+  <body>
+    <div id="wrap">
+      <nav role="navigation" class="navbar navbar-default">
+        <div class="navbar-header"><a href="/" class="navbar-brand">GIT FAQ  - What does &quot;Changing History&quot; mean?</a></div>
+      </nav>
+      <div class="container"><a href="/#toc" title="Go back to table of contents" class="contents">Table of Contents</a>
+        <h2>What does &quot;Changing History&quot; mean?</h2>
+        <article class="article">
+          <section class="content"><p>In git, each commit is tagged with a unique <span class="caps">SHA</span>-1 hash. These are critical when resolving differences between sources that
 have diverged. This sequence of SHAs is referred to as the “history” and “changing history” is regenerating
 those hashes via any number of legitimate&nbsp;means.</p>
 <p>A modified history makes it very difficult to resolve differences between two repositories because, from git’s perspective,
@@ -40,23 +40,24 @@ Problems occur because you can rarely be sure you’ve communicated with <em>eve
 make sure important changes are pushed before a history&nbsp;modification.</p>
 <p>See also <a href="/articles/what-is-local-shared-history.html">What is local history/shared&nbsp;history?</a></p>
 </section>
-      </article>
+        </article>
+      </div>
     </div>
-  </div>
-  <div class="github-fork-ribbon-wrapper right">
-    <div class="github-fork-ribbon"><a href="https://github.com/jsoverson/gitfaq">Fork me on GitHub</a></div>
-  </div>
-  <div id="footer">
-    <div class="container"></div>
-  </div>
-  <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-53866202-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+    <div class="github-fork-ribbon-wrapper right">
+      <div class="github-fork-ribbon"><a href="https://github.com/jsoverson/gitfaq">Fork me on GitHub</a></div>
+    </div>
+    <div id="footer">
+      <div class="container"></div>
+    </div>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-53866202-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>
