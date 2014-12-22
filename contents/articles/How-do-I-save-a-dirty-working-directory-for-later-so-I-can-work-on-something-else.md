@@ -1,5 +1,5 @@
 ---
-title: How do I interrupt my work for an emergency bugfix?
+title: How do I save a dirty working directory for later so I can work on something else?
 template: article.jade
 ---
 
