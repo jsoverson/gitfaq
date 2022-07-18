@@ -1,8 +1,25 @@
 {
-  "dependencies": {
-    "moment": "2.3.x",
-    "underscore": "1.4.x",
-    "typogr": "0.5.x"
+  "name": "gitfaq.org",
+  "version": "0.0.1",
+  "description": "GitFAQ.org",
+  "main": "none.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "none"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsoverson/gitfaq.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsoverson/gitfaq/issues"
+  },
+  "homepage": "https://github.com/jsoverson/gitfaq#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0"
+  }
 }

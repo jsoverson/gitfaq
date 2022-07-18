@@ -19,46 +19,36 @@ The goal here is to get concise, linkable answers to googlable search terms rela
 
 ### Adding a FAQ
 
-Add FAQ entries, individually, to the `contents/articles/` directory. The filename is the URL so make sure it is terse
+Add FAQ entries, individually, to the `contents/posts/` directory. The filename is the URL so make sure it is terse
 yet still includes relevant search terms.
 
 Example file : `how-do-i-commit-a-file.md`
 
     ---
-    title: How do I commit a file?
-    template: article.jade
+    author: "Jarrod Overson"
+    date: 2022-7-14
+    linktitle: How do I add only a portion of a file?
+    title: How do I add only a portion of a file?
     ---
+
+    ```sh
+    $ git add --patch <file>
     ```
-    git add file.js # stage the file
-    git commit      # commit the file
-    ```
- 
-The front matter contains the displayed title and the template used. The template should always be `article.jade`.
 
 The answer to a question should be as terse as possible, deferring to other FAQs if necessary for clarification.
 Editorializing should be limited, notable exceptions are to provide reasoning behind common practice if that
 is a large part of why a certain FAQ exists to begin with.
 
-## Building
+## Building locally
 
-This is built with wintersmith, install via npm:
+This site uses the Hugo static site generator. To view the site with local changes, use `hugo server`:
 
-```
-$ npm install -g wintersmith
-```
-
-Install local npm modules from within the gitfaq directory.
-
-```
-$ npm install
+```sh
+$ hugo server
 ```
 
-Preview changes with `wintersmith preview`
-
-```
-$ wintersmith preview
-```
+Your site will be available at [http://127.0.0.1:1313](http://127.0.0.1:1313) by default.
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT)
+[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
