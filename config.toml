@@ -96,11 +96,6 @@ style = 'manni'
 
 [module]
 # uncomment line below for temporary local development of module
-# replacements = "github.com/jsoverson/allfaqs -> ../../allfaqs"
 [module.hugoVersion]
 extended = true
 min = "0.75.0"
-[[module.imports]]
-path = "github.com/jsoverson/allfaqs"
-# path = "file://../bootstrap-list"
-disable = false

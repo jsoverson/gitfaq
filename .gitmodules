@@ -1,0 +1,3 @@
+[submodule "themes/allfaqs"]
+	path = themes/allfaqs
+	url = git@github.com:jsoverson/allfaqs.git
