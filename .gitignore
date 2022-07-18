@@ -5,3 +5,4 @@ Thumbs.db
 /resources
 /public
 *.lock
+node_modules
